@@ -77,7 +77,7 @@ namespace Strings
              * 0 - идентичны
              * < 0 - строка 1 перед строкой 2 по алфавиту
              * > 0 - строка 1 после строки 2 по алфавиту
-             */
+             *//*
 
 
             // -=================== Find subString (Поиск подстроки) ===================
@@ -264,11 +264,11 @@ namespace Strings
             sbAppendLine.AppendLine("How are you?");
 
             Console.WriteLine($"AppendLine : {sbAppendLine}");
-            /* Вывод:
+            *//* Вывод:
                Hello,
                world!
                How are you?
-            */
+            *//*
 
             // -=================== AppendFormat
             // Пример 1: Простой пример форматирования
@@ -325,7 +325,7 @@ namespace Strings
 
             // Получаем емкость после установки
             int updatedCapacity = sbCapacity.Capacity;
-            Console.WriteLine($"Updated Capacity: {updatedCapacity}");
+            Console.WriteLine($"Updated Capacity: {updatedCapacity}");*/
         }
     }
 }
