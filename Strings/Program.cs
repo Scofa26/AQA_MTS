@@ -1,5 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Data.SqlTypes;
+using System.Diagnostics.Tracing;
+using System.IO;
+using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Strings
 {
@@ -326,6 +332,89 @@ namespace Strings
             // Получаем емкость после установки
             int updatedCapacity = sbCapacity.Capacity;
             Console.WriteLine($"Updated Capacity: {updatedCapacity}");*/
+
+
+
+
+
+            // -=================== HW ===================
+
+            
+
+            /*Задание 1:
+            Заменить в строке все вхождения 'test' на 'testing'.
+            Удалить из текста все символы, являющиеся цифрами*/
+
+            Console.WriteLine($"Задание1");
+
+            string newPath = "C:\\Users\\Scofa\\source\\repos\\AQA_MTS\\Strings\\input.txt";
+            string text = File.ReadAllText(newPath);
+            Console.WriteLine($"Исходная строка : {text}");
+            string replacedString = text.Replace("test", "testing");
+            replacedString = Regex.Replace(replacedString, @"\d+","");
+           
+
+            Console.WriteLine($"Replace: {replacedString}");
+
+            /* Задание 2
+             Используя метод вывода значения в консоль, выполните конкатенацию слов 
+                 и выведите на экран следующую фразу:
+             Welcome to the TMS lesons.
+             Каждое слово должно быть записано отдельно и взято в кавычки, 
+                 например "Welcome".Не забывайте о пробелах после каждого слова*/
+            Console.WriteLine("");
+            Console.WriteLine("Задание2.1");
+
+            string[] str_array = new string[] {"Welcome","to","the","TMS","lesons"};
+            string join_str_final = String.Empty; 
+            join_str_final= string.Join("\" \"", str_array);
+            join_str_final =  join_str_final.Insert(0, "\"");
+            join_str_final =  join_str_final.Insert(join_str_final.Length, "\"");
+            Console.WriteLine(join_str_final);
+
+
+            Console.WriteLine("Задание2.1");
+
+            StringBuilder concat = new StringBuilder();
+            foreach (string word in  str_array)
+            {
+                  concat.Append(" \"").Append(word).Append("\"");
+            }
+                Console.WriteLine(concat);
+
+            /*Задание 3
+            Дана строка: “teamwithsomeofexcersicesabcwanttomakeitbetter.”
+            Необходимо найти в данной строке "abc", записав всё что до этих символов 
+                в первую переменную, а также всё, что после них во вторую.
+            Результат вывести в консоль.*/
+            Console.WriteLine("");
+            Console.WriteLine("Задание3");
+
+            string test = "teamwithsomeofexcersicesabcwanttomakeitbetter.";
+
+            string[] words = test.Split("abc");
+            string tmp1 = words[0], tmp2 = words[1];
+
+            Console.WriteLine($"tmp1 = {tmp1}  tmp2 = {tmp2}");
+
+            /* Задание 4
+             Дана строка: “Плохой день.”
+             Необходимо с помощью метода substring удалить слово "плохой".
+             После чего необходимо используя команду insert создать строку со значением: Хороший день!!!!!!!!!.
+             Заменить последний "!" на "?"*/
+            Console.WriteLine("");
+            Console.WriteLine("Задание4");
+
+            string tmp3 = "Плохой день.";
+            tmp3 = tmp3.Replace(tmp3.Substring(0, 6), "");
+            string tmp4 = tmp3.Insert(0, "Хороший").Replace(".", "!!!!!!!!!");
+
+            tmp4 = tmp4.Remove(tmp4.LastIndexOf('!')).Insert(tmp4.Length-1,"?");
+             
+
+             Console.WriteLine($"Результат = {tmp4}");
+
+
         }
     }
 }
