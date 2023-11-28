@@ -339,7 +339,7 @@ namespace Strings
 
             // -=================== HW ===================
 
-            
+
 
             /*Задание 1:
             Заменить в строке все вхождения 'test' на 'testing'.
@@ -347,12 +347,12 @@ namespace Strings
 
             Console.WriteLine($"Задание1");
 
-            string newPath = "C:\\Users\\Scofa\\source\\repos\\AQA_MTS\\Strings\\input.txt";
+            string newPath = @"C:\Users\Scofa\source\repos\AQA_MTS\Strings\input.txt";
             string text = File.ReadAllText(newPath);
             Console.WriteLine($"Исходная строка : {text}");
             string replacedString = text.Replace("test", "testing");
-            replacedString = Regex.Replace(replacedString, @"\d+","");
-           
+            replacedString = Regex.Replace(replacedString, @"\d+", "");
+
 
             Console.WriteLine($"Replace: {replacedString}");
 
@@ -365,22 +365,22 @@ namespace Strings
             Console.WriteLine("");
             Console.WriteLine("Задание2.1");
 
-            string[] str_array = new string[] {"Welcome","to","the","TMS","lesons"};
-            string join_str_final = String.Empty; 
-            join_str_final= string.Join("\" \"", str_array);
-            join_str_final =  join_str_final.Insert(0, "\"");
-            join_str_final =  join_str_final.Insert(join_str_final.Length, "\"");
+            string[] str_array = new string[] { "Welcome", "to", "the", "TMS", "lesons" };
+            string join_str_final = String.Empty;
+            join_str_final = string.Join("\" \"", str_array);
+            join_str_final = join_str_final.Insert(0, "\"");
+            join_str_final = join_str_final.Insert(join_str_final.Length, "\"");
             Console.WriteLine(join_str_final);
 
 
             Console.WriteLine("Задание2.1");
 
             StringBuilder concat = new StringBuilder();
-            foreach (string word in  str_array)
+            foreach (string word in str_array)
             {
-                  concat.Append(" \"").Append(word).Append("\"");
+                concat.Append(" \"").Append(word).Append("\"");
             }
-                Console.WriteLine(concat);
+            Console.WriteLine(concat);
 
             /*Задание 3
             Дана строка: “teamwithsomeofexcersicesabcwanttomakeitbetter.”
@@ -409,10 +409,10 @@ namespace Strings
             tmp3 = tmp3.Replace(tmp3.Substring(0, 6), "");
             string tmp4 = tmp3.Insert(0, "Хороший").Replace(".", "!!!!!!!!!");
 
-            tmp4 = tmp4.Remove(tmp4.LastIndexOf('!')).Insert(tmp4.Length-1,"?");
-             
+            tmp4 = tmp4.Remove(tmp4.LastIndexOf('!')).Insert(tmp4.Length - 1, "?");
 
-             Console.WriteLine($"Результат = {tmp4}");
+
+            Console.WriteLine($"Результат = {tmp4}");
 
 
         }
