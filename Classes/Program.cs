@@ -1,4 +1,5 @@
 ﻿using Classes.Models;
+using Encapsulation;
 
 namespace Classes
 {
@@ -188,6 +189,8 @@ namespace Classes
             Console.WriteLine($"Наелся ? - {cat.Feed(4)}");
             Console.WriteLine("Наелся ? -{0}", cat.Feed(4) ? "Да":"Нет" );
 
+            State state = new State();
+            //state.internalVar - Ошибка 
         }
     }
 
