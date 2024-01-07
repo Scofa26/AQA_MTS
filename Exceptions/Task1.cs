@@ -46,7 +46,6 @@ namespace Exceptions
                     flag = false;
                     throw new WrongPasswordException(password, confirmPassword, "Не совпадают значения");
                 }
-
             }
             catch (Exception e)
             {
