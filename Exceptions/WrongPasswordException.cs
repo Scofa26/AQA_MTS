@@ -13,9 +13,11 @@ namespace Exceptions
         {
         }
 
-        public WrongPasswordException(string password, string message) : base($"Неверный ввод в поле '{password}': {message}")
+        public WrongPasswordException(string password, string message)
+            : base($"Неверный ввод в поле '{password}': {message}")
         {
         }
+
         public WrongPasswordException(string password, string confirmPassword, string message)
             : base($"Неверный ввод в полях '{password}' и '{confirmPassword}': {message}")
         {
