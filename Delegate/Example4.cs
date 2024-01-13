@@ -33,6 +33,14 @@ namespace Delegate
              operation = SelectOperation(OperationType.Multiply);
             Console.Write(operation(10, 4));
 
+            OperationType[] operationTypes = (OperationType[])Enum.GetValues(typeof(OperationType));
+            Operation operation1;
+            foreach(OperationType operationType in operationTypes)
+            {
+                operation1 = SelectOperation(operationType);
+                Console.Write(operation1(1,13));
+            }
+
         }
         private bool Test(NoParameters delagateValue)
         {
