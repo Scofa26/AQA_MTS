@@ -10,9 +10,12 @@ namespace Task1ArrayList
     {
         public static void PrintIfo(System.Collections.IList list)
         {
+            Console.WriteLine("Список книг:");
+
             foreach (Book item in list)
             {
-                item.ToString();
+               Console.WriteLine(item.ToString());
+               Console.WriteLine();
             }
         }
     }

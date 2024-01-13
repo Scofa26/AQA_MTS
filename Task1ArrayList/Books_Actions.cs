@@ -4,27 +4,70 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Task1ArrayList
 {
     internal class Books_Actions
     {
-        ArrayList books = new ArrayList();
-        public void Add(string name, string fio, int year) { 
+        public static void AddBook(ArrayList books)
+        {
+            Console.WriteLine("Ввведите название книги");
+            string name = Console.ReadLine();
 
-            Book bookForAdd = new Book(name, fio, year);
+            Console.WriteLine("Ввведите автора книги");
+            string fio = Console.ReadLine();
 
-            try 
-            { 
-                books.Add(bookForAdd);
-            }
-            catch(Exception ex)
+            Console.WriteLine("Ввведите год книги");
+            int year = Convert.ToInt32(Console.ReadLine());
+
+            try
             {
-                Console.WriteLine($"Ошибка ввода: {ex.Message}");  
-            }   
-           
-        } 
-        
+                books.Add(new Book(name, fio, year));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Ошибка ввода: {ex.Message}");
+            }
+        }
 
+        public static void FindBook(ArrayList books)
+        {
+            Console.WriteLine("Ввведите автора книги");
+            string fio = Console.ReadLine();
+
+            foreach (Book book in books)
+                if (book.Fio.Equals(fio))
+                { 
+                    Console.WriteLine(book.ToString());
+                    break;
+                }
+                else Console.WriteLine($"Книг автора {fio} не найдено");
+        }
+
+        public static void DeleteBook(ArrayList books)
+        {
+            Console.WriteLine("Ввведите название книги");
+            string name = Console.ReadLine();
+
+            try
+            {
+                foreach (Book book in books)
+                    if (book.Name.Equals(name))
+                    {
+                        books.Remove(book);
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Книги с именем {name} не найдено");
+                        break;
+                    }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Ошибка удаления: {ex.Message}");
+            }
+        }
     }
 }

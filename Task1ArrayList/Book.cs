@@ -18,6 +18,9 @@ namespace Task1ArrayList
             this.year = year;
         }
 
+        public string Name { get => name; set => name = value; }
+        public string Fio { get => fio; set => fio = value; }
+        public int Year { get => year; set => year = value; }
         public override string? ToString()
         {
             return $"""
