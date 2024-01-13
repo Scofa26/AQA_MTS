@@ -35,14 +35,15 @@ namespace Task1ArrayList
         {
             Console.WriteLine("Ввведите автора книги");
             string fio = Console.ReadLine();
-
+            bool flag = false;
             foreach (Book book in books)
                 if (book.Fio.Equals(fio))
-                { 
+                {
                     Console.WriteLine(book.ToString());
-                    break;
+                    flag = true;
                 }
-                else Console.WriteLine($"Книг автора {fio} не найдено");
+
+            if (flag == false) Console.WriteLine($"книг автора {fio} не найдено");
         }
 
         public static void DeleteBook(ArrayList books)

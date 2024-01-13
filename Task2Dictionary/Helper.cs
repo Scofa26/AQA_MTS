@@ -14,7 +14,7 @@ namespace Task2Dictionary
 
             foreach (var item in dictionary)
             {
-                Console.WriteLine(item.Key + item.ToString());
+                Console.WriteLine(item.ToString());
                 Console.WriteLine();
             }
         }
