@@ -21,14 +21,14 @@ namespace Delegates.Task3
             switch (sortType)
             {
                 case SortTypes.BubbleSort:
-                    return  BubbleSort;
-                default: return ShakerSort;
+                    return BubbleSort;
+                default:
+                    return ShakerSort;
             }
         }
 
         static int[] BubbleSort(int[] array)
         {
-            var len = array.Length;
             for (int i = 1; i < array.Length; i++)
             {
                 for (int j = 0; j < array.Length - i; j++)
