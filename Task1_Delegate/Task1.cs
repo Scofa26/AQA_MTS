@@ -15,6 +15,7 @@ namespace Task1_Delegate
             ReturnInt returnint = PrintInt;
             returnint.Invoke();
         }
+
         public int PrintInt()
         {
             Random rnd = new Random();
