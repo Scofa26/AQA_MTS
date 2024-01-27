@@ -12,13 +12,13 @@ namespace LINQ_HW.Data
         public IEnumerator<int> GetEnumerator()
         {
             int[] values = { 1, 1, 2, 2, 3, 4, 5, 5, 6, 6, 7, 8 };
-              
-            foreach(int i in values) { yield return i; }   
+
+            foreach (int i in values) { yield return i; }
         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            return GetEnumerator(); 
+            return GetEnumerator();
         }
     }
 }

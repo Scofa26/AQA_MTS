@@ -13,11 +13,11 @@ namespace LINQ_HW
 
         public void Method()
         {
-            //Извлечь все нечетные. Сохранить исходный порядок следования. Удалить все вхождения повторяющихся эл-ов, кроме 1-х.
+            //Извлечь все нечетные. Сохранить исходный порядок следования. Удалить все вхождения повторяющихся эл-ов
             PrintHelper.Print(testintset, i => Console.WriteLine($"testintset = {i}"));
-            var result = testintset.Where(num => num % 2 == 1).TakeWhile(num => num.In).Distinct().Select(num => num).D;
+            var result = testintset.Where(num => num % 2 == 1).Distinct().Select(num => num);
 
-           PrintHelper.Print(result, i => Console.WriteLine($"result = {i}"));
+            PrintHelper.Print(result, i => Console.WriteLine($"result = {i}"));
         }
     }
 }
