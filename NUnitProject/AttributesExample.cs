@@ -125,9 +125,17 @@ namespace NUnitProject
             Console.WriteLine($"{this}: PropertyTest... {TestContext.CurrentContext.Test.Properties.Get("Severity")}");
         }
 
-        [Test, SeverityAttrimutes(SeverityLevel.Minor)]
-       // [Test, Severity(SeverityLevel.Major)]
-        public void AdvancedPropertyTest()
-        { Console.WriteLine($"{this}: PropertyTest... {TestContext.CurrentContext.Test.Properties.Get("Severity")}"); }
+        [Test]
+        [SeverityAttrimutes(SeverityLevel.Critical)]
+        public void PropertyTest1()
+        {
+            Console.WriteLine($"{this}: PropertyTest... {TestContext.CurrentContext.Test.Properties.Get("Severity")}");
+        }
+
+        /* [Test, SeverityAttrimutes(SeverityLevel.Minor)]
+        // [Test, Severity(SeverityLevel.Major)]
+        [
+         public void AdvancedPropertyTest()
+         { Console.WriteLine($"{this}: PropertyTest... {TestContext.CurrentContext.Test.Properties.Get("Severity")}"); }*/
     }
 }
