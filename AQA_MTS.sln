@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.34114.132
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34316.72
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AQA_MTS", "AQA_MTS\AQA_MTS.csproj", "{1F13BF18-5FA0-402A-A491-6F3FF20A6B65}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnitHomework", "NUnitHomework\NUnitHomework.csproj", "{929D0D8B-8CE0-4686-BF01-5EC2F0F9374B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1F13BF18-5FA0-402A-A491-6F3FF20A6B65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1F13BF18-5FA0-402A-A491-6F3FF20A6B65}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1F13BF18-5FA0-402A-A491-6F3FF20A6B65}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1F13BF18-5FA0-402A-A491-6F3FF20A6B65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{929D0D8B-8CE0-4686-BF01-5EC2F0F9374B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{929D0D8B-8CE0-4686-BF01-5EC2F0F9374B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{929D0D8B-8CE0-4686-BF01-5EC2F0F9374B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{929D0D8B-8CE0-4686-BF01-5EC2F0F9374B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
