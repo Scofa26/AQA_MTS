@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 
 namespace SeleniumBasic.Tests
 {
+    [Parallelizable(scope:ParallelScope.All)]
+    [FixtureLifeCycle(LifeCycle.InstancePerTestCase)]
     internal class BaseClass
     {
         protected IWebDriver Driver { get; set; }

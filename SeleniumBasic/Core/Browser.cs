@@ -17,13 +17,12 @@ namespace SeleniumBasic.Core
             Driver = Configurator.BrowserType?.ToLower() switch
             {
                 "chrome" => new DriverFactory().GetChromeDriver(),
-                "firefox" => new DriverFactory().GetFirefoxDriver(),
-                _ => Driver
+                _=> Driver
             };
 
             Driver?.Manage().Window.Maximize();
             Driver?.Manage().Cookies.DeleteAllCookies();
-            Driver!.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(0);
+            //Driver!.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(0);
         }
     }
 }
