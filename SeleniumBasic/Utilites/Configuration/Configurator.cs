@@ -6,7 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-namespace SeleniumBasic.Utilites.Configuration
+namespace Locators.Utilites.Configuration
 {
     internal class Configurator
     {

@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
-using SeleniumBasic.Core;
-using SeleniumBasic.Utilites.Configuration;
+using Locators.Core;
+using Locators.Utilites.Configuration;
 
 namespace Locators.Core
 {
@@ -19,7 +19,7 @@ namespace Locators.Core
 
             Driver?.Manage().Window.Maximize();
             Driver?.Manage().Cookies.DeleteAllCookies();
-            Driver!.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(0);
+           // Driver!.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(0);
         }
     }
 }

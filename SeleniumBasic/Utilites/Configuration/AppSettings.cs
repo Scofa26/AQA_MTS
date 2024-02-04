@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SeleniumBasic.Utilites.Configuration
+namespace Locators.Utilites.Configuration
 {
     public class AppSettings
     {

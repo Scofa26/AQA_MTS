@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using WebDriverManager.DriverConfigs.Impl;
 using WebDriverManager;
 
-namespace SeleniumBasic.Core
+namespace Locators.Core
 {
     internal class DriverFactory
     {

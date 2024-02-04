@@ -1,14 +1,16 @@
 ﻿using OpenQA.Selenium;
-using SeleniumBasic.Core;
+using Locators.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SeleniumBasic.Tests
+namespace Locators.Tests
 {
-    internal class BaseClass
+    [Parallelizable(scope: ParallelScope.All)]
+    [FixtureLifeCycle(LifeCycle.InstancePerTestCase)]
+    internal class BaseTest
     {
         protected IWebDriver Driver { get; set; }
 
