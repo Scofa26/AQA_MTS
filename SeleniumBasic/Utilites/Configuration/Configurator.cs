@@ -6,7 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-namespace Locators.Utilites.Configuration
+namespace SauceDemo.Utilites.Configuration
 {
     internal class Configurator
     {

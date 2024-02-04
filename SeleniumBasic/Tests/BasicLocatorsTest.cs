@@ -1,4 +1,4 @@
-﻿using Locators.Utilites.Configuration;
+﻿using SauceDemo.Utilites.Configuration;
 using Microsoft.Playwright.NUnit;
 using OpenQA.Selenium;
 using System;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Locators.Tests
+namespace SauceDemo.Tests
 {
     internal class BasicLocatorsTest : BaseTest
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Locators.Utilites.Configuration
+namespace SauceDemo.Utilites.Configuration
 {
     public class AppSettings
     {

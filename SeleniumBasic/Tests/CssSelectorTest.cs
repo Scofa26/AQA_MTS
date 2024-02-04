@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Locators.Tests
+namespace SauceDemo.Tests
 {
     internal class CssSelectorTest : BaseTest
     {

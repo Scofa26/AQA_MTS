@@ -1,12 +1,12 @@
 ﻿using OpenQA.Selenium;
-using Locators.Core;
+using SauceDemo.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Locators.Tests
+namespace SauceDemo.Tests
 {
     [Parallelizable(scope: ParallelScope.All)]
     [FixtureLifeCycle(LifeCycle.InstancePerTestCase)]

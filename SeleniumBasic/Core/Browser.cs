@@ -1,8 +1,8 @@
 ﻿using OpenQA.Selenium;
-using Locators.Core;
-using Locators.Utilites.Configuration;
+using SauceDemo.Core;
+using SauceDemo.Utilites.Configuration;
 
-namespace Locators.Core
+namespace SauceDemo.Core
 {
     internal class Browser
     {
