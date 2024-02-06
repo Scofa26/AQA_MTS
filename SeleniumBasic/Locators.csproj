@@ -10,6 +10,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="NewFolder\**" />
+    <EmbeddedResource Remove="NewFolder\**" />
+    <None Remove="NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="appsettings.json" />
     <None Remove="Recources\chromedriver.exe" />
     <None Remove="Recources\index.html" />
@@ -40,10 +46,6 @@
     <PackageReference Include="Selenium.Support" Version="4.17.0" />
     <PackageReference Include="Selenium.WebDriver" Version="4.17.0" />
     <PackageReference Include="WebDriverManager" Version="2.17.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="NewFolder\" />
   </ItemGroup>
 
 </Project>
