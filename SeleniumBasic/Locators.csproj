@@ -11,24 +11,19 @@
 
   <ItemGroup>
     <Compile Remove="NewFolder\**" />
+    <Compile Remove="Recources\**" />
     <EmbeddedResource Remove="NewFolder\**" />
+    <EmbeddedResource Remove="Recources\**" />
     <None Remove="NewFolder\**" />
+    <None Remove="Recources\**" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="appsettings.json" />
-    <None Remove="Recources\chromedriver.exe" />
-    <None Remove="Recources\index.html" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="appsettings.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Recources\chromedriver.exe">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Recources\index.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
