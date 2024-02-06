@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
+using PajeObjectSimple.Helpers.Configuration;
 using SauceDemo.Core;
-using SauceDemo.Utilites.Configuration;
 
 namespace SauceDemo.Core
 {
