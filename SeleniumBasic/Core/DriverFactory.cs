@@ -11,16 +11,16 @@ using WebDriverManager;
 
 namespace SeleniumAdvanced.Core
 {
-    internal class DriverFactory
+    public class DriverFactory
     {
         public IWebDriver? GetChromeDriver()
         {
             var chromeOptions = new ChromeOptions();
-            chromeOptions.AddArguments("--incognito");
-            chromeOptions.AddArguments("--disable-gpu");
-            chromeOptions.AddArguments("--disable-extensions");
-            //chromeOptions.AddArguments("--headless");
-
+            //chromeOptions.AddArguments("--incognito");
+            // chromeOptions.AddArguments("--disable-gpu");
+            //chromeOptions.AddArguments("--disable-extensions");
+            //chromeOptions.AddArguments("--disable-extensions");
+            chromeOptions.AddUserProfilePreference("download.default_directory", @"C:\tmp");
             chromeOptions.SetLoggingPreference(LogType.Browser, LogLevel.All);
             chromeOptions.SetLoggingPreference(LogType.Driver, LogLevel.All);
 

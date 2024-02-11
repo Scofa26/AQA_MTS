@@ -24,8 +24,6 @@ namespace SeleniumAdvanced.Helpers
             return _wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(locator));
         }
 
-        //четкая замена driber.FinfElement
-        //Будет ждать что эл-т сущ в dom модели
         public IWebElement WaitForExists(By locator)
         {
             return _wait.Until(ExpectedConditions.ElementExists(locator));

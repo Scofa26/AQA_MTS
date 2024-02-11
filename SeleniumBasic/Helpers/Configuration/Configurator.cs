@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 namespace SeleniumAdvanced.Helpers.Configuration
 {
-    internal class Configurator
+    public class Configurator
     {
         private static readonly Lazy<IConfiguration> s_configuration;
         public static IConfiguration Configuration => s_configuration.Value;

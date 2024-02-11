@@ -3,7 +3,7 @@ using SeleniumAdvanced.Helpers.Configuration;
 
 namespace SeleniumAdvanced.Core
 {
-    internal class Browser
+    public class Browser
     {
         public IWebDriver? Driver { get; }
 

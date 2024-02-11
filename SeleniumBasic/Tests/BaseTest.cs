@@ -12,7 +12,7 @@ namespace SeleniumAdvanced.Tests
 {
     [Parallelizable(scope: ParallelScope.All)]
     [FixtureLifeCycle(LifeCycle.InstancePerTestCase)]
-    internal class BaseTest
+    public class BaseTest
     {
         protected IWebDriver Driver { get; private set; }
         protected WaitsHelper WaitsHelper { get; private set; }
@@ -21,7 +21,7 @@ namespace SeleniumAdvanced.Tests
         public void FactoryDriverTest()
         {
             Driver = new Browser().Driver;
-            WaitsHelper waitsHelper = new WaitsHelper(Driver, TimeSpan.FromSeconds(Configurator.WaitsTimeout));
+            WaitsHelper = new WaitsHelper(Driver, TimeSpan.FromSeconds(Configurator.WaitsTimeout));
         }
         [TearDown]
         public void TearDown()
