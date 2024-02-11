@@ -1,8 +1,7 @@
 ﻿using OpenQA.Selenium;
-using Locators.Core;
-using Locators.Utilites.Configuration;
+using SeleniumAdvanced.Helpers.Configuration;
 
-namespace Locators.Core
+namespace SeleniumAdvanced.Core
 {
     internal class Browser
     {
@@ -19,7 +18,7 @@ namespace Locators.Core
 
             Driver?.Manage().Window.Maximize();
             Driver?.Manage().Cookies.DeleteAllCookies();
-           // Driver!.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(0);
+            Driver!.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(0);
         }
     }
 }

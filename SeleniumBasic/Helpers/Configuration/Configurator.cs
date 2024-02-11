@@ -6,7 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-namespace Locators.Utilites.Configuration
+namespace SeleniumAdvanced.Helpers.Configuration
 {
     internal class Configurator
     {
@@ -51,5 +51,7 @@ namespace Locators.Utilites.Configuration
         }
 
         public static string? BrowserType => Configuration[nameof(BrowserType)];
+        public static double WaitsTimeout => Double.Parse(Configuration[nameof(WaitsTimeout)]);
+
     }
 }
