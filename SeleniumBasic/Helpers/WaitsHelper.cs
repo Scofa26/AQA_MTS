@@ -30,14 +30,10 @@ namespace SeleniumAdvanced.Helpers
         {
             return _wait.Until(ExpectedConditions.ElementExists(locator));
         }
+       
         public bool WaitForFileExists(FileInfo fileInfo)
         {
-            while(true)
-            {
-                if (fileInfo.Name.Length == 0) continue;
-                else
-                    throw new TimeoutException();
-            }
+             return _wait.Until<bool>(_ => fileInfo.Exists);
         }
         public bool WaitForElementInvisible(By locator)
         {
