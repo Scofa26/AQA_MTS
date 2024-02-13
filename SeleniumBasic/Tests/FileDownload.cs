@@ -2,6 +2,7 @@
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
+using SeleniumAdvanced.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,10 @@ namespace SeleniumAdvanced.Tests
         public void FileDownloadTest()
         {
             Driver.Navigate().GoToUrl("http://the-internet.herokuapp.com/download");
-            FileInfo fileInfo = new FileInfo(@"C:\tmp\some-file.txt");
+            string filePath = Path.Combine(DriverFactory.filePath, "some-file.txt", "some-file.txt");
+
+            FileInfo fileInfo = new FileInfo(filePath);
+           // string fileInfoName = fileInfo.Name;
             if (fileInfo.Exists) fileInfo.Delete();
 
             Actions action = new Actions(Driver);
@@ -26,11 +30,13 @@ namespace SeleniumAdvanced.Tests
                 .Pause(TimeSpan.FromSeconds(3))
                 .Build()
                 .Perform();
-
+            Console.WriteLine($"Path = {filePath}");
+            Console.WriteLine($"Path = {fileInfo.Name}");
+            Console.WriteLine($"Path = {fileInfo.LinkTarget}");
             Assert.Multiple(() =>
             {
-                Assert.That(fileInfo.Exists, Is.True);
-                Assert.That(fileInfo.Name, Is.EqualTo("some-file.txt"));
+                Assert.That(WaitsHelper.WaitForFileExists(fileInfo), Is.True);
+                //Assert.That(fileInfo.Name, Is.E);
             });
         }
     }

@@ -1,9 +1,11 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using SeleniumAdvanced.Core;
 using SeleniumExtras.WaitHelpers;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,7 +30,15 @@ namespace SeleniumAdvanced.Helpers
         {
             return _wait.Until(ExpectedConditions.ElementExists(locator));
         }
-
+        public bool WaitForFileExists(FileInfo fileInfo)
+        {
+            while(true)
+            {
+                if (fileInfo.Name.Length == 0) continue;
+                else
+                    throw new TimeoutException();
+            }
+        }
         public bool WaitForElementInvisible(By locator)
         {
             return _wait.Until(ExpectedConditions.InvisibilityOfElementLocated(locator));
@@ -71,7 +81,7 @@ namespace SeleniumAdvanced.Helpers
             };
 
             fluentWait.IgnoreExceptionTypes(typeof(NoSuchElementException));
-
+ 
             // Использование
             return fluentWait.Until(_ => driver.FindElement(locator));
         }

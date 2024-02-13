@@ -25,7 +25,7 @@ namespace SeleniumAdvanced.Tests
 
             IWebElement input = WaitsHelper.WaitForExists(By.XPath("//input[@type='text']"));
 
-            Assert.That(input.Enabled, Is.False);
+            Assert.That(!input.Enabled);
 
             Driver.FindElement(By.XPath("//button[text()='Enable']")).Click();
 

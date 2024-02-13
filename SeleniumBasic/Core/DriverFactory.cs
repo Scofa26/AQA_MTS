@@ -8,19 +8,24 @@ using System.Text;
 using System.Threading.Tasks;
 using WebDriverManager.DriverConfigs.Impl;
 using WebDriverManager;
+using System.Reflection;
 
 namespace SeleniumAdvanced.Core
 {
     public class DriverFactory
     {
+        public static string filePath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Resources");
+
         public IWebDriver? GetChromeDriver()
         {
+            string assemblyPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            string filePath = Path.Combine(assemblyPath, "Resources", "some-file.txt");
             var chromeOptions = new ChromeOptions();
             //chromeOptions.AddArguments("--incognito");
             // chromeOptions.AddArguments("--disable-gpu");
             //chromeOptions.AddArguments("--disable-extensions");
             //chromeOptions.AddArguments("--disable-extensions");
-            chromeOptions.AddUserProfilePreference("download.default_directory", @"C:\tmp");
+            chromeOptions.AddUserProfilePreference("download.default_directory", filePath);
             chromeOptions.SetLoggingPreference(LogType.Browser, LogLevel.All);
             chromeOptions.SetLoggingPreference(LogType.Driver, LogLevel.All);
 
