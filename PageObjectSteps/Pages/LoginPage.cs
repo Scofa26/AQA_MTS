@@ -4,8 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PageObjectSteps.Pages;
+using PageObjectSteps.Pages;
 
-namespace PajeObjectSimple.Pages
+namespace PageObjectSteps.Pages
 {
     internal class LoginPage : BasePage
     {
@@ -30,22 +32,7 @@ namespace PajeObjectSimple.Pages
         public IWebElement RememberMeCheckbox => WaitHelpers.WaitForExists(RememberMeCheckboxBy);
         public IWebElement LoginInButton => WaitHelpers.WaitForExists(LoginInButtonBy);
 
-        // Комплексные
-        public DashboardPage SuccessfulLogin(string username, string password)
-        {
-            EmailInput.SendKeys(username);
-            PswInput.SendKeys(password);
-            LoginInButton.Click();
-            return new DashboardPage(Driver);
-        }
-        public LoginPage IncorrectLogin(string username, string password)
-        {
-            EmailInput.SendKeys(username);
-            PswInput.SendKeys(password);
-            LoginInButton.Click();
-
-            return this;
-        }
+        
 
         protected override string GetEndpoint()
         {
@@ -56,5 +43,11 @@ namespace PajeObjectSimple.Pages
         {
             return LoginInButton.Displayed && EmailInput.Displayed;
         }
+
+        // Методы действий с элементами
+        public void ClickLoginInButton() => LoginInButton.Click();
+
+        // Методы получения свойств
+        public string GetErrorLabelText() => ErrorLabel.Text.Trim();
     }
 }

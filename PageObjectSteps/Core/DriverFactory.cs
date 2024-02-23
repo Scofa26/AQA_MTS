@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using WebDriverManager.DriverConfigs.Impl;
 using WebDriverManager;
 
-namespace PajeObjectSimple.Core
+namespace PageObjectSteps.Core
 {
     internal class DriverFactory
     {

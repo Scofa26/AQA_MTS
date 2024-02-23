@@ -1,7 +1,8 @@
 ﻿using OpenQA.Selenium;
-using PajeObjectSimple.Helpers.Configuration;
-using PajeObjectSimple.Core;
-namespace PajeObjectSimple.Core
+using PageObjectSteps.Core;
+using PageObjectSteps.Helpers.Configuration;
+
+namespace PageObjectSteps.Core
 {
     internal class Browser
     {

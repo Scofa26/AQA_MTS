@@ -1,6 +1,5 @@
 ﻿using PajeObjectSimple.Helpers.Configuration;
 using PajeObjectSimple.Pages;
-using SauceDemo.Tests;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,13 +8,29 @@ using System.Threading.Tasks;
 
 namespace PajeObjectSimple.Tests 
 {
-    internal class LoginTest : BaseTest
+    internal class LoginTest : SauceDemo.Tests.BaseTest
     {
         [Test]
         public void SuccessfulLoginTest()
         {
-            var loginPage = new LoginPage(Driver);
-            loginPage.EmailInput.SendKeys(Configurator.AppSettings.Username);
+            // Простой вид
+            LoginPage loginPage = new LoginPage(Driver);
+            loginPage.SuccessfulLogin(Configurator.AppSettings.Username, Configurator.AppSettings.Password);
+            DashboardPage dashboardPage = new DashboardPage(Driver);
+
+            // Проверка 
+            Assert.That(dashboardPage.IsPageOpened);
+        }
+
+        [Test]
+        public void InvalidUsernameLoginTest()
+        {
+            // Проверка
+            Assert.That(
+                new LoginPage(Driver)
+                    .IncorrectLogin("ssdd", "")
+                    .ErrorLabel.Text.Trim(),
+                Is.EqualTo("Email/Login or Password is incorrect. Please try again."));
         }
     }
 }
