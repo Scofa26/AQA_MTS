@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PajeObjectSimple.Pages.ProjectPages
 {
-    internal class ProjectBasePage : BasePage
+    internal abstract class ProjectBasePage : BasePage
     {
         private static readonly By NameInputBy = By.Id("name");
 
@@ -19,14 +19,6 @@ namespace PajeObjectSimple.Pages.ProjectPages
         {
         }
 
-        public override bool IsPageOpened()
-        {
-            throw new NotImplementedException();
-        }
-
-        protected override string GetEndpoint()
-        {
-            throw new NotImplementedException();
-        }
+      
     }
 }
