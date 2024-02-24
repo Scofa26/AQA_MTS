@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using PageObjectSimple.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,39 +12,34 @@ namespace PajeObjectSimple.Pages
     {
         private static string END_POINT = "";
 
-        // Описание элементов
-        private static readonly By EmailInputBy = By.Id("name");
+        private static readonly By UserNameInputBy = By.Id("user-name");
         private static readonly By PswInputBy = By.Id("password");
-        private static readonly By RememberMeCheckboxBy = By.Id("rememberme");
-        private static readonly By LoginInButtonBy = By.Id("button_primary");
-        private static readonly By ErrorLabelBy = By.CssSelector("[data-testid='loginErrorText']");
+        private static readonly By LoginInButtonBy = By.Id("login-button");
+        private static readonly By ErrorTextBy = By.XPath("//h3[@data-test='error']");
 
-        // Инициализация класса
         public LoginPage(IWebDriver driver) : base(driver)
         {
         }
 
         // Методы
-        public IWebElement EmailInput => WaitHelpers.WaitForExists(EmailInputBy);
-        public IWebElement ErrorLabel => WaitHelpers.WaitForExists(ErrorLabelBy);
+        public IWebElement UserNameInput => WaitHelpers.WaitForExists(UserNameInputBy);
         public IWebElement PswInput => WaitHelpers.WaitForExists(PswInputBy);
-        public IWebElement RememberMeCheckbox => WaitHelpers.WaitForExists(RememberMeCheckboxBy);
         public IWebElement LoginInButton => WaitHelpers.WaitForExists(LoginInButtonBy);
+        public IWebElement ErrorText => WaitHelpers.WaitForExists(ErrorTextBy);
 
         // Комплексные
-        public DashboardPage SuccessfulLogin(string username, string password)
+        public IventoryPage SuccessfulLogin(string username, string password)
         {
-            EmailInput.SendKeys(username);
+            UserNameInput.SendKeys(username);
             PswInput.SendKeys(password);
             LoginInButton.Click();
-            return new DashboardPage(Driver);
+            return new IventoryPage(Driver, true);
         }
         public LoginPage IncorrectLogin(string username, string password)
         {
-            EmailInput.SendKeys(username);
+            UserNameInput.SendKeys(username);
             PswInput.SendKeys(password);
             LoginInButton.Click();
-
             return this;
         }
 
@@ -54,7 +50,7 @@ namespace PajeObjectSimple.Pages
 
         public override bool IsPageOpened()
         {
-            return LoginInButton.Displayed && EmailInput.Displayed;
+            return LoginInButton.Displayed && UserNameInput.Displayed;
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using PajeObjectSimple.Helpers.Configuration;
+﻿using OpenQA.Selenium;
+using PageObjectSimple.Pages;
+using PajeObjectSimple.Helpers.Configuration;
 using PajeObjectSimple.Pages;
 using System;
 using System.Collections.Generic;
@@ -8,29 +10,42 @@ using System.Threading.Tasks;
 
 namespace PajeObjectSimple.Tests 
 {
-    internal class LoginTest : SauceDemo.Tests.BaseTest
+    internal class LoginTest : BaseTest
     {
         [Test]
-        public void SuccessfulLoginTest()
+        public void StandartUserSuccessfulLoginTest()
         {
-            // Простой вид
             LoginPage loginPage = new LoginPage(Driver);
-            loginPage.SuccessfulLogin(Configurator.AppSettings.Username, Configurator.AppSettings.Password);
-            DashboardPage dashboardPage = new DashboardPage(Driver);
-
-            // Проверка 
-            Assert.That(dashboardPage.IsPageOpened);
+            IventoryPage iventoryPage = loginPage.SuccessfulLogin(Configurator.AppSettings.Username, Configurator.AppSettings.Password);
+            Assert.That(iventoryPage.IsPageOpened);
         }
 
         [Test]
-        public void InvalidUsernameLoginTest()
+        public void LockedOutUsernameLoginTest()
         {
-            // Проверка
             Assert.That(
                 new LoginPage(Driver)
-                    .IncorrectLogin("ssdd", "")
-                    .ErrorLabel.Text.Trim(),
-                Is.EqualTo("Email/Login or Password is incorrect. Please try again."));
+                    .IncorrectLogin("locked_out_user", Configurator.AppSettings.Password)
+                    .ErrorText.Text.Trim(),
+                Is.EqualTo("Epic sadface: Sorry, this user has been locked out."));
+        }
+
+        [Test]
+        public void PerformanceGlitchUsernameLoginTest()
+        {
+            LoginPage loginPage = new LoginPage(Driver);
+            IventoryPage iventoryPage = loginPage.SuccessfulLogin("performance_glitch_user", Configurator.AppSettings.Password);
+            Assert.That(iventoryPage.IsPageOpened);
+        }
+
+        [Test]
+        public void ProblemUsernameLoginTest()
+        {
+            Assert.That(
+                new LoginPage(Driver)
+                    .IncorrectLogin("problem_user", "")
+                    .ErrorText.Text.Trim(),
+                Is.EqualTo("Epic sadface: Password is required"));
         }
     }
 }

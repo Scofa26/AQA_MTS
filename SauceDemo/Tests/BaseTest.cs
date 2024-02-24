@@ -6,8 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PajeObjectSimple.Core;
+using PajeObjectSimple.Helpers.Configuration;
 
-namespace SauceDemo.Tests
+namespace PajeObjectSimple.Tests
 {
     [Parallelizable(scope: ParallelScope.All)]
     [FixtureLifeCycle(LifeCycle.InstancePerTestCase)]
@@ -20,7 +21,7 @@ namespace SauceDemo.Tests
         {
             Driver = new Browser().Driver;
            
-            Driver.Navigate().GoToUrl(PajeObjectSimple.Helpers.Configuration.Configurator.AppSettings.URL);
+            Driver.Navigate().GoToUrl(Configurator.AppSettings.URL);
         }
 
         [TearDown]

@@ -9,31 +9,30 @@ using System.Threading.Tasks;
 
 namespace PajeObjectSimple.Pages
 {
-    internal abstract class BasePage 
+    internal abstract class BasePage
     {
-        public BasePage(IWebDriver driver, bool openPageByUrl = false)
+        protected IWebDriver Driver { get; private set; }
+        protected WaitHelpers WaitHelpers { get; private set; }
+
+        public BasePage(IWebDriver driver)
         {
             Driver = driver;
             WaitHelpers = new WaitHelpers(Driver, TimeSpan.FromSeconds(Configurator.WaitsTimeout));
+        }
 
+        public BasePage(IWebDriver driver, bool openPageByUrl) : this(driver)
+        {
             if(openPageByUrl)
             {
                 OpenPageByURL();
             }
         }
-        protected IWebDriver Driver { get; private set; }
-        protected WaitHelpers WaitHelpers { get; private set; }
 
         protected abstract string GetEndpoint();
         public abstract bool IsPageOpened();
         protected void OpenPageByURL()
         {
             Driver.Navigate().GoToUrl(Configurator.AppSettings.URL + GetEndpoint());
-        }
-
-        protected void WaitPageOpen()
-        {
-
         }
     }
 }
