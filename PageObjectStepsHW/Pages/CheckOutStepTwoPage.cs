@@ -1,12 +1,11 @@
 ﻿using OpenQA.Selenium;
-using PageObjectSimple.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PageObjectSimple.Pages
+namespace PageObjectStepsHW.Pages
 {
     internal class CheckOutStepTwoPage : BasePage
     {
@@ -25,13 +24,9 @@ namespace PageObjectSimple.Pages
 
         public CheckOutStepTwoPage(IWebDriver driver, bool openPageByUrl) : base(driver, openPageByUrl)
         {
+
         }
-        
-        public CheckOutCompletePage ClickFinishButton()
-        {
-            FinishButton.Click();
-            return new CheckOutCompletePage(Driver, true);
-        }
+
         public override bool IsPageOpened()
         {
             return TitleLabel.Text.Trim().Equals("Checkout: Overview");

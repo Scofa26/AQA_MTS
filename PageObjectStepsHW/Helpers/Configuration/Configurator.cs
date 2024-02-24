@@ -5,11 +5,10 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using PageObjectSteps.Helpers.Configuration;
 
-namespace PageObjectSteps.Helpers.Configuration
+namespace PageObjectStepsHW.Helpers.Configuration
 {
-    public class Configurator
+    internal class Configurator
     {
         private static readonly Lazy<IConfiguration> s_configuration;
         public static IConfiguration Configuration => s_configuration.Value;
@@ -53,6 +52,5 @@ namespace PageObjectSteps.Helpers.Configuration
 
         public static string? BrowserType => Configuration[nameof(BrowserType)];
         public static double WaitsTimeout => Double.Parse(Configuration[nameof(WaitsTimeout)]);
-
     }
 }

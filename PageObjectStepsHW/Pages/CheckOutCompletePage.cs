@@ -1,12 +1,11 @@
 ﻿using OpenQA.Selenium;
-using PageObjectSimple.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PageObjectSimple.Pages
+namespace PageObjectStepsHW.Pages
 {
     internal class CheckOutCompletePage : BasePage
     {
@@ -15,7 +14,6 @@ namespace PageObjectSimple.Pages
         private readonly By ComleteLabelBy = By.ClassName("complete-header");
         private readonly By BackHomeButtonBy = By.Id("back-to-products");
 
-
         public IWebElement TitleLabel => WaitHelpers.WaitForExists(TitleLabelBy);
         public IWebElement ComleteLabel => WaitHelpers.WaitForExists(ComleteLabelBy);
         public IWebElement BackHomeButton => WaitHelpers.WaitForExists(BackHomeButtonBy);
@@ -23,12 +21,7 @@ namespace PageObjectSimple.Pages
 
         public CheckOutCompletePage(IWebDriver driver, bool openPageByUrl) : base(driver, openPageByUrl)
         {
-        }
 
-        public IventoryPage ReturnHomePage()
-        {
-            BackHomeButton.Click();
-            return new IventoryPage(Driver, true);
         }
 
         public override bool IsPageOpened()

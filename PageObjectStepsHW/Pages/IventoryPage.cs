@@ -1,12 +1,11 @@
 ﻿using OpenQA.Selenium;
-using PageObjectSimple.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PageObjectSimple.Pages
+namespace PageObjectStepsHW.Pages
 {
     internal class IventoryPage : BasePage
     {
@@ -42,10 +41,5 @@ namespace PageObjectSimple.Pages
         }
 
         public void ClickAddToCartBackBackButton() => AddBackpackButton.Click();
-        public ProductCartPage ClickShoppingCartLink()
-        {
-            ShoppingCartLink.Click();
-            return new ProductCartPage(Driver, true);
-        }
     }
 }

@@ -1,22 +1,20 @@
-﻿using OpenQA.Selenium;
-using PageObjectSimple.Pages;
-using PageObjectSimple.Helpers.Configuration;
+﻿using PageObjectStepsHW.Helpers.Configuration;
+using PageObjectStepsHW.Pages;
+using PageObjectStepsHW.Steps;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PageObjectSimple.Tests;
 
-namespace PageObjectSimple.Tests 
+namespace PageObjectStepsHW.Tests
 {
     internal class LoginTest : BaseTest
     {
         [Test]
         public void StandartUserSuccessfulLoginTest()
         {
-            LoginPage loginPage = new LoginPage(Driver);
-            IventoryPage iventoryPage = loginPage.SuccessfulLogin(Configurator.AppSettings.Username, Configurator.AppSettings.Password);
+            IventoryPage iventoryPage = NavigationSteps.SuccessfulLogin(Configurator.AppSettings.Username, Configurator.AppSettings.Password);
             Assert.That(iventoryPage.IsPageOpened);
         }
 
@@ -24,7 +22,7 @@ namespace PageObjectSimple.Tests
         public void LockedOutUsernameLoginTest()
         {
             Assert.That(
-                new LoginPage(Driver)
+                NavigationSteps
                     .IncorrectLogin("locked_out_user", Configurator.AppSettings.Password)
                     .ErrorText.Text.Trim(),
                 Is.EqualTo("Epic sadface: Sorry, this user has been locked out."));
@@ -33,8 +31,7 @@ namespace PageObjectSimple.Tests
         [Test]
         public void PerformanceGlitchUsernameLoginTest()
         {
-            LoginPage loginPage = new LoginPage(Driver);
-            IventoryPage iventoryPage = loginPage.SuccessfulLogin("performance_glitch_user", Configurator.AppSettings.Password);
+            IventoryPage iventoryPage = NavigationSteps.SuccessfulLogin("performance_glitch_user", Configurator.AppSettings.Password);
             Assert.That(iventoryPage.IsPageOpened);
         }
 
@@ -42,7 +39,7 @@ namespace PageObjectSimple.Tests
         public void ProblemUsernameLoginTest()
         {
             Assert.That(
-                new LoginPage(Driver)
+                NavigationSteps
                     .IncorrectLogin("problem_user", "")
                     .ErrorText.Text.Trim(),
                 Is.EqualTo("Epic sadface: Password is required"));

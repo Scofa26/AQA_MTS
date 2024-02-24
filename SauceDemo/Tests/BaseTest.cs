@@ -5,10 +5,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PajeObjectSimple.Core;
-using PajeObjectSimple.Helpers.Configuration;
+using PageObjectSimple.Core;
+using PageObjectSimple.Helpers.Configuration;
 
-namespace PajeObjectSimple.Tests
+namespace PageObjectSimple.Tests
 {
     [Parallelizable(scope: ParallelScope.All)]
     [FixtureLifeCycle(LifeCycle.InstancePerTestCase)]

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PageObjectSimple.Helpers.Configuration
+namespace PageObjectStepsHW.Helpers.Configuration
 {
-    public class AppSettings
+    internal class AppSettings
     {
         public string? URL { get; set; }
         public string? Username { get; set; }

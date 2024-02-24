@@ -1,12 +1,11 @@
 ﻿using OpenQA.Selenium;
-using PageObjectSimple.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PageObjectSimple.Pages
+namespace PageObjectStepsHW.Pages
 {
     internal class CheckOutStepOnePage : BasePage
     {
@@ -25,15 +24,9 @@ namespace PageObjectSimple.Pages
 
         public CheckOutStepOnePage(IWebDriver driver, bool openPageByUrl) : base(driver, openPageByUrl)
         {
+
         }
-        public CheckOutStepTwoPage CheckInfo(string firstName, string lastName, string postCode)
-        {
-            FirstNameInput.SendKeys(firstName);
-            LastNameInput.SendKeys(lastName);
-            PostalCodeInput.SendKeys(postCode);
-            ContinueButton.Click();
-            return new CheckOutStepTwoPage(Driver, true);
-        }
+
         public override bool IsPageOpened()
         {
             return TitleLabel.Text.Trim().Equals("Checkout: Your Information");

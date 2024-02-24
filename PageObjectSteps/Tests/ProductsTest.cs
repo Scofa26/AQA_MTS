@@ -1,23 +1,24 @@
-﻿using PageObjectSimple.Pages;
-using PageObjectSimple.Helpers.Configuration;
-
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PageObjectSimple.Tests;
+using PageObjectSteps.Tests;
+using PageObjectSteps.Steps;
+using PageObjectSteps.Helpers.Configuration;
+using PageObjectSteps.Pages;
 
-namespace PageObjectSimple.Tests
+namespace PageObjectSteps.Tests
 {
     internal class ProductsTest : BaseTest
     {
         [Test]
         public void AddProductToCart()
         {
-            LoginPage loginPage = new LoginPage(Driver);
-            IventoryPage iventoryPage = loginPage.SuccessfulLogin(Configurator.AppSettings.Username, Configurator.AppSettings.Password);
-
+            IventoryPage iventoryPage = NavigationSteps.SuccessfulLogin(Configurator.AppSettings.Username, Configurator.AppSettings.Password);
+            Assert.That(iventoryPage.IsPageOpened);
+            
             iventoryPage.ClickAddToCartBackBackButton();
             int countProductAfter = Convert.ToInt32(iventoryPage.ShoppingCartBadge.Text);
 
@@ -27,7 +28,7 @@ namespace PageObjectSimple.Tests
                 Assert.That(countProductAfter, Is.EqualTo(1)); // Проверка, что кол-во эл-ов в shopping_cart_badge = 1, т.к. в тесте добавляется только 1 продукт 
             });
 
-            ProductCartPage productCartPage = iventoryPage.ClickShoppingCartLink();
+            ProductCartPage productCartPage = NavigationSteps.ClickShoppingCartLink();
 
             Assert.Multiple(() =>
             {
@@ -39,11 +40,11 @@ namespace PageObjectSimple.Tests
         [Test]
         public void RemoveProductToCart()
         {
-            LoginPage loginPage = new LoginPage(Driver);
-            IventoryPage iventoryPage = loginPage.SuccessfulLogin(Configurator.AppSettings.Username, Configurator.AppSettings.Password);
+            IventoryPage iventoryPage = NavigationSteps.SuccessfulLogin(Configurator.AppSettings.Username, Configurator.AppSettings.Password);
+            Assert.That(iventoryPage.IsPageOpened);
 
             iventoryPage.ClickAddToCartBackBackButton();
-            ProductCartPage productCartPage = iventoryPage.ClickShoppingCartLink();
+            ProductCartPage productCartPage = NavigationSteps.ClickShoppingCartLink();
 
             Assert.Multiple(() =>
             {
@@ -64,11 +65,11 @@ namespace PageObjectSimple.Tests
         [Test]
         public void CheckPayment()
         {
-            LoginPage loginPage = new LoginPage(Driver);
-            IventoryPage iventoryPage = loginPage.SuccessfulLogin(Configurator.AppSettings.Username, Configurator.AppSettings.Password);
+            IventoryPage iventoryPage = NavigationSteps.SuccessfulLogin(Configurator.AppSettings.Username, Configurator.AppSettings.Password);
+            Assert.That(iventoryPage.IsPageOpened);
 
             iventoryPage.ClickAddToCartBackBackButton();
-            ProductCartPage productCartPage = iventoryPage.ClickShoppingCartLink();
+            ProductCartPage productCartPage = NavigationSteps.ClickShoppingCartLink();
 
             Assert.Multiple(() =>
             {
@@ -76,10 +77,11 @@ namespace PageObjectSimple.Tests
                 Assert.That(productCartPage.ItemLabel.Text, Is.EqualTo("Sauce Labs Backpack"));
             });
             
-            CheckOutStepOnePage checkOutStepOnePage = productCartPage.ClickCheckoutbutton();
+            CheckOutStepOnePage checkOutStepOnePage = NavigationSteps.ClickCheckoutbutton();
             Assert.That(checkOutStepOnePage.IsPageOpened);
 
-            CheckOutStepTwoPage checkOutStepTwoPage = checkOutStepOnePage.CheckInfo("Sonya", "Chida", "89202");
+            CheckOutStepTwoPage checkOutStepTwoPage = NavigationSteps.CheckInfo("Sonya", "Chida", "89202");
+
             Assert.Multiple(() =>
             {
                 Assert.That(checkOutStepTwoPage.IsPageOpened);
@@ -88,7 +90,7 @@ namespace PageObjectSimple.Tests
                 Assert.That(checkOutStepTwoPage.FinishButtonVisible, Is.EqualTo(true));
             });
 
-            CheckOutCompletePage checkOutCompletePage = checkOutStepTwoPage.ClickFinishButton();
+            CheckOutCompletePage checkOutCompletePage = NavigationSteps.ClickFinishButton();
 
             Assert.Multiple(() =>
             {
@@ -97,7 +99,7 @@ namespace PageObjectSimple.Tests
                 Assert.That(checkOutCompletePage.BackHomeButtonVisible, Is.EqualTo(true));
             });
 
-            IventoryPage iventoryPageAfterCompleteOrder = checkOutCompletePage.ReturnHomePage();
+            IventoryPage iventoryPageAfterCompleteOrder = NavigationSteps.ReturnHomePage();
             Assert.That(iventoryPageAfterCompleteOrder.IsPageOpened());
         }
     }

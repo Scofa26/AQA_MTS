@@ -1,23 +1,22 @@
 ﻿using OpenQA.Selenium;
-
+using PageObjectStepsHW.Core;
+using PageObjectStepsHW.Helpers.Configuration;
+using PageObjectStepsHW.Steps;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PageObjectSteps.Core;
-using PageObjectSteps.Helpers.Configuration;
-using PageObjectSteps.Steps;
 
-namespace PageObjectSteps.Tests
+namespace PageObjectStepsHW.Tests
 {
-    [Parallelizable(scope: ParallelScope.All)]
-    [FixtureLifeCycle(LifeCycle.InstancePerTestCase)]
+    //[Parallelizable(scope: ParallelScope.All)]
+    //[FixtureLifeCycle(LifeCycle.InstancePerTestCase)]
     internal class BaseTest
     {
         protected IWebDriver Driver { get; private set; }
         protected NavigationSteps NavigationSteps { get; private set; }
-       
+
         [SetUp]
         public void FactoryDriverTest()
         {

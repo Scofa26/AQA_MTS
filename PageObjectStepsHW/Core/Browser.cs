@@ -1,8 +1,12 @@
 ﻿using OpenQA.Selenium;
-using PageObjectSimple.Helpers.Configuration;
-using PageObjectSimple.Core;
+using PageObjectStepsHW.Helpers.Configuration;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace PageObjectSimple.Core
+namespace PageObjectStepsHW.Core
 {
     internal class Browser
     {
@@ -19,8 +23,7 @@ namespace PageObjectSimple.Core
 
             Driver?.Manage().Window.Maximize();
             Driver?.Manage().Cookies.DeleteAllCookies();
-           // Driver!.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(0);
+            // Driver!.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(0);
         }
     }
 }
-

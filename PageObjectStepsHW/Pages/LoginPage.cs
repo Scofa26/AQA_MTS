@@ -1,12 +1,11 @@
 ﻿using OpenQA.Selenium;
-using PageObjectSteps.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PageObjectSteps.Pages
+namespace PageObjectStepsHW.Pages
 {
     internal class LoginPage : BasePage
     {

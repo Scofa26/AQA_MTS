@@ -1,12 +1,12 @@
 ﻿using OpenQA.Selenium;
-using PageObjectSimple.Pages;
+using PageObjectSteps.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PageObjectSimple.Pages
+namespace PageObjectSteps.Pages
 {
     internal class ProductCartPage : BasePage
     {
@@ -30,11 +30,6 @@ namespace PageObjectSimple.Pages
         }
 
         public void ClickRemovebutton() => RemoveButton.Click();
-        public CheckOutStepOnePage ClickCheckoutbutton()
-        {
-            CheckoutButton.Click();
-            return new CheckOutStepOnePage(Driver, true);
-        }
        
         public override bool IsPageOpened()
         {

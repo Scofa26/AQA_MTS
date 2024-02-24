@@ -1,13 +1,13 @@
 ﻿using OpenQA.Selenium;
-using PageObjectSteps.Helpers;
-using PageObjectSteps.Helpers.Configuration;
+using PageObjectStepsHW.Helpers;
+using PageObjectStepsHW.Helpers.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PageObjectSteps.Pages
+namespace PageObjectStepsHW.Pages
 {
     internal abstract class BasePage
     {

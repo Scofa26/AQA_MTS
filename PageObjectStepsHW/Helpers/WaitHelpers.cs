@@ -1,23 +1,23 @@
-﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
+﻿using OpenQA.Selenium.Support.UI;
+using OpenQA.Selenium;
+using SeleniumExtras.WaitHelpers;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
-using SeleniumExtras.WaitHelpers;
-
-namespace PageObjectSimple.Helpers
+namespace PageObjectStepsHW.Helpers
 {
-    public class WaitHelpers(IWebDriver driver, TimeSpan timeout)
+    internal class WaitHelpers(IWebDriver driver, TimeSpan timeout)
     {
         private readonly WebDriverWait _wait = new(driver, timeout);
         public IWebElement WaitForVisibilityLocatedBy(By locator)
         {
             return _wait.Until(ExpectedConditions.ElementIsVisible(locator));
-                
+
         }
 
         public ReadOnlyCollection<IWebElement> WaitForAllVisibleElementsLocatedBy(By locator)
