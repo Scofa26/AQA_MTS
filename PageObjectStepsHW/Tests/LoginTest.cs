@@ -1,11 +1,10 @@
-﻿using System;
+﻿using ChainOfInvocations.Helpers.Configuration;
+using ChainOfInvocations.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ChainOfInvocations.Helpers.Configuration;
-using ChainOfInvocations.Pages;
-using ChainOfInvocations.Tests;
 
 namespace ChainOfInvocations.Tests
 {

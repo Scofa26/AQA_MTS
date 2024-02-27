@@ -5,8 +5,9 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using ValueOfObjects.Helpers.Configuration;
 
-namespace ChainOfInvocations.Helpers.Configuration
+namespace ValueOfObjects.Helpers.Configuration
 {
     internal class Configurator
     {

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ChainOfInvocations.Pages;
 
 namespace ChainOfInvocations.Pages
 {
@@ -32,6 +31,6 @@ namespace ChainOfInvocations.Pages
         }
 
         // Атомарные Методы
-        public IWebElement TitleLabel => WaitsHelper.WaitForExists(TitleLabelBy);
+        public IWebElement TitleLabel => WaitHelpers.WaitForExists(TitleLabelBy);
     }
 }

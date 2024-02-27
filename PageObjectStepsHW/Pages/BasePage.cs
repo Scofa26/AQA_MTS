@@ -1,12 +1,11 @@
-﻿using OpenQA.Selenium;
+﻿using ChainOfInvocations.Helpers;
+using ChainOfInvocations.Helpers.Configuration;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ChainOfInvocations.Helpers;
-using ChainOfInvocations.Helpers.Configuration;
-using ChainOfInvocations.Pages;
 
 namespace ChainOfInvocations.Pages
 {

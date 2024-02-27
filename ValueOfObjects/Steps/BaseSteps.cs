@@ -1,13 +1,13 @@
-﻿using ChainOfInvocations.Pages;
-using ChainOfInvocations.Pages.ProjectPages;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ValueOfObjects.Pages;
+using ValueOfObjects.Pages.ProjectPages;
 
-namespace ChainOfInvocations.Steps
+namespace ValueOfObjects.Steps
 {
     internal class BaseSteps (IWebDriver driver)
     {

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ChainOfInvocations.Pages;
 
 namespace ChainOfInvocations.Pages
 {
@@ -36,11 +35,11 @@ namespace ChainOfInvocations.Pages
 
         // Методы
         // Методы поиска элементов
-        public IWebElement EmailInput => WaitsHelper.WaitForExists(EmailInputBy);
-        public IWebElement ErrorLabel => WaitsHelper.WaitForExists(ErrorLabelBy);
-        public IWebElement PswInput => WaitsHelper.WaitForExists(PswInputBy);
-        public IWebElement RememberMeCheckbox => WaitsHelper.WaitForExists(RememberMeCheckboxBy);
-        public IWebElement LoginInButton => WaitsHelper.WaitForExists(LoginInButtonBy);
+        public IWebElement EmailInput => WaitHelpers.WaitForExists(EmailInputBy);
+        public IWebElement ErrorLabel => WaitHelpers.WaitForExists(ErrorLabelBy);
+        public IWebElement PswInput => WaitHelpers.WaitForExists(PswInputBy);
+        public IWebElement RememberMeCheckbox => WaitHelpers.WaitForExists(RememberMeCheckboxBy);
+        public IWebElement LoginInButton => WaitHelpers.WaitForExists(LoginInButtonBy);
 
         // Методы действий с элементами
         public void ClickLoginInButton() => LoginInButton.Click();

@@ -1,12 +1,13 @@
-﻿using ChainOfInvocations.Helpers.Configuration;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ValueOfObjects.Core;
+using ValueOfObjects.Helpers.Configuration;
 
-namespace ChainOfInvocations.Core
+namespace ValueOfObjects.Core
 {
     internal class Browser
     {

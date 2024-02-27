@@ -1,12 +1,11 @@
-﻿using OpenQA.Selenium;
+﻿using ChainOfInvocations.Pages;
+using ChainOfInvocations.Pages.ProjectPages;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ChainOfInvocations.Pages;
-using ChainOfInvocations.Pages.ProjectPages;
-using ChainOfInvocations.Steps;
 
 namespace ChainOfInvocations.Steps
 {
