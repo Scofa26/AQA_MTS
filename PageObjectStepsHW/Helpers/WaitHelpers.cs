@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace PageObjectStepsHW.Helpers
+namespace ChainOfInvocations.Helpers
 {
     internal class WaitHelpers(IWebDriver driver, TimeSpan timeout)
     {

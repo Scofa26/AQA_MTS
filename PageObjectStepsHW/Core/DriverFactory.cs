@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using WebDriverManager.DriverConfigs.Impl;
 using WebDriverManager;
 
-namespace PageObjectStepsHW.Core
+namespace ChainOfInvocations.Core
 {
     internal class DriverFactory
     {

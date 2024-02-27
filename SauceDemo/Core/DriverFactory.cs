@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using WebDriverManager.DriverConfigs.Impl;
 using WebDriverManager;
 
-namespace PageObjectSimple.Core
+namespace LoadableComponent.Core
 {
     internal class DriverFactory
     {

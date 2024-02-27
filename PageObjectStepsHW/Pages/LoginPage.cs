@@ -4,27 +4,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ChainOfInvocations.Pages;
 
-namespace PageObjectStepsHW.Pages
+namespace ChainOfInvocations.Pages
 {
     internal class LoginPage : BasePage
     {
         private static string END_POINT = "";
 
-        private static readonly By UserNameInputBy = By.Id("user-name");
+        // Описание элементов
+        private static readonly By EmailInputBy = By.Id("name");
         private static readonly By PswInputBy = By.Id("password");
-        private static readonly By LoginInButtonBy = By.Id("login-button");
-        private static readonly By ErrorTextBy = By.XPath("//h3[@data-test='error']");
+        private static readonly By RememberMeCheckboxBy = By.Id("rememberme");
+        private static readonly By LoginInButtonBy = By.Id("button_primary");
+        private static readonly By ErrorLabelBy = By.CssSelector("[data-testid='loginErrorText']");
 
+        // Инициализация класса
         public LoginPage(IWebDriver driver) : base(driver)
         {
         }
-
-        // Методы
-        public IWebElement UserNameInput => WaitHelpers.WaitForExists(UserNameInputBy);
-        public IWebElement PswInput => WaitHelpers.WaitForExists(PswInputBy);
-        public IWebElement LoginInButton => WaitHelpers.WaitForExists(LoginInButtonBy);
-        public IWebElement ErrorText => WaitHelpers.WaitForExists(ErrorTextBy);
 
         protected override string GetEndpoint()
         {
@@ -33,7 +31,21 @@ namespace PageObjectStepsHW.Pages
 
         public override bool IsPageOpened()
         {
-            return LoginInButton.Displayed && UserNameInput.Displayed;
+            return LoginInButton.Displayed && EmailInput.Displayed;
         }
+
+        // Методы
+        // Методы поиска элементов
+        public IWebElement EmailInput => WaitsHelper.WaitForExists(EmailInputBy);
+        public IWebElement ErrorLabel => WaitsHelper.WaitForExists(ErrorLabelBy);
+        public IWebElement PswInput => WaitsHelper.WaitForExists(PswInputBy);
+        public IWebElement RememberMeCheckbox => WaitsHelper.WaitForExists(RememberMeCheckboxBy);
+        public IWebElement LoginInButton => WaitsHelper.WaitForExists(LoginInButtonBy);
+
+        // Методы действий с элементами
+        public void ClickLoginInButton() => LoginInButton.Click();
+
+        // Методы получения свойств
+        public string GetErrorLabelText() => ErrorLabel.Text.Trim();
     }
 }

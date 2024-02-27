@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34316.72
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PageObjectSimple", "SauceDemo\PageObjectSimple.csproj", "{3E4CBB52-21FB-4097-BDF3-40264C662AEC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoadableComponent", "SauceDemo\LoadableComponent.csproj", "{3E4CBB52-21FB-4097-BDF3-40264C662AEC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PageObjectStepsHW", "PageObjectStepsHW\PageObjectStepsHW.csproj", "{7461C928-AFFF-4407-9B14-062A254AC35A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChainOfInvocations", "PageObjectStepsHW\ChainOfInvocations.csproj", "{7461C928-AFFF-4407-9B14-062A254AC35A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PageObjectStepsHW.Helpers.Configuration
+namespace ChainOfInvocations.Helpers.Configuration
 {
     internal class AppSettings
     {

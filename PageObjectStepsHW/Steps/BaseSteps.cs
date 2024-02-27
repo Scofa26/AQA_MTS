@@ -1,25 +1,20 @@
 ﻿using OpenQA.Selenium;
-using PageObjectStepsHW.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ChainOfInvocations.Pages;
+using ChainOfInvocations.Pages.ProjectPages;
 
-namespace PageObjectStepsHW.Steps
+namespace ChainOfInvocations.Steps
 {
-    internal class BaseSteps
+    internal class BaseSteps (IWebDriver driver)
     {
-        protected IWebDriver Driver;
-        public LoginPage _loginPage => new LoginPage(Driver);
-        public IventoryPage _iventoryPage => new IventoryPage(Driver, true);
-        public ProductCartPage _productCartPage => new ProductCartPage(Driver, true);
-        public CheckOutStepOnePage _checkOutStepOnePage => new CheckOutStepOnePage(Driver, true);
-        public CheckOutStepTwoPage _checkOutStepTwoPage => new CheckOutStepTwoPage(Driver, true);
-        public CheckOutCompletePage _checkOutCompletePage => new CheckOutCompletePage(Driver, true);
-        public BaseSteps(IWebDriver driver)
-        {
-            Driver = driver;
-        }
+        protected readonly IWebDriver Driver = driver;
+        protected LoginPage? LoginPage { get; set; }
+        protected DashboardPage? DashboardPage { get; set; }
+        protected  AddProjectPage? AddProjectPage { get; set; }
+       
     }
 }

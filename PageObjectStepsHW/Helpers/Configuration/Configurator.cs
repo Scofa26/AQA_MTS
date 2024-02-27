@@ -5,8 +5,9 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using ChainOfInvocations.Helpers.Configuration;
 
-namespace PageObjectStepsHW.Helpers.Configuration
+namespace ChainOfInvocations.Helpers.Configuration
 {
     internal class Configurator
     {

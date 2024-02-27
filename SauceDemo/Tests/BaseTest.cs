@@ -5,10 +5,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PageObjectSimple.Core;
-using PageObjectSimple.Helpers.Configuration;
+using LoadableComponent.Core;
+using LoadableComponent.Helpers.Configuration;
 
-namespace PageObjectSimple.Tests
+namespace LoadableComponent.Tests
 {
     [Parallelizable(scope: ParallelScope.All)]
     [FixtureLifeCycle(LifeCycle.InstancePerTestCase)]

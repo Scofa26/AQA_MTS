@@ -6,8 +6,9 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using LoadableComponent.Helpers.Configuration;
 
-namespace PageObjectSimple.Helpers.Configuration
+namespace LoadableComponent.Helpers.Configuration
 {
     public class Configurator
     {

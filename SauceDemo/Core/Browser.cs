@@ -1,8 +1,8 @@
 ﻿using OpenQA.Selenium;
-using PageObjectSimple.Helpers.Configuration;
-using PageObjectSimple.Core;
+using LoadableComponent.Core;
+using LoadableComponent.Helpers.Configuration;
 
-namespace PageObjectSimple.Core
+namespace LoadableComponent.Core
 {
     internal class Browser
     {

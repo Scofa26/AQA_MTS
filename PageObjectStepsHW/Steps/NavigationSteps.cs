@@ -1,67 +1,35 @@
 ﻿using OpenQA.Selenium;
-using PageObjectStepsHW.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ChainOfInvocations.Pages;
+using ChainOfInvocations.Steps;
 
-namespace PageObjectStepsHW.Steps
+namespace ChainOfInvocations.Steps
 {
-    internal class NavigationSteps : BaseSteps
+    internal class NavigationSteps(IWebDriver driver) : BaseSteps(driver)
     {
-        public NavigationSteps(IWebDriver driver) : base(driver)
+        // Комплексные
+        public DashboardPage SuccessfulLogin(string username, string password)
         {
-           
+            return Login<DashboardPage>(username, password);
         }
 
-        public IventoryPage SuccessfulLogin(string name, string pass)
+        public LoginPage IncorrectLogin(string username, string password)
         {
-            _loginPage.UserNameInput.SendKeys(name);
-            _loginPage.PswInput.SendKeys(pass);
-            _loginPage.LoginInButton.Click();
-            return new IventoryPage(Driver, true);
+            return Login<LoginPage>(username, password);
         }
 
-        public LoginPage IncorrectLogin(string name, string pass)
+        private T Login<T>(string username, string password) where T : BasePage
         {
-            _loginPage.UserNameInput.SendKeys(name);
-            _loginPage.PswInput.SendKeys(pass);
-            _loginPage.LoginInButton.Click();
-            return _loginPage;
-        }
+            LoginPage = new LoginPage(Driver);
+            LoginPage.EmailInput.SendKeys(username);
+            LoginPage.PswInput.SendKeys(password);
+            LoginPage.LoginInButton.Click();
 
-        public ProductCartPage ClickShoppingCartLink()
-        {
-            _iventoryPage.ShoppingCartLink.Click();
-            return new ProductCartPage(Driver, true);
-        }
-
-        public CheckOutStepOnePage ClickCheckoutbutton()
-        {
-            _productCartPage.CheckoutButton.Click();
-            return new CheckOutStepOnePage(Driver, true);
-        }
-
-        public CheckOutStepTwoPage CheckInfo(string firstName, string lastName, string postCode)
-        {
-            _checkOutStepOnePage.FirstNameInput.SendKeys(firstName);
-            _checkOutStepOnePage.LastNameInput.SendKeys(lastName);
-            _checkOutStepOnePage.PostalCodeInput.SendKeys(postCode);
-            _checkOutStepOnePage.ContinueButton.Click();
-            return new CheckOutStepTwoPage(Driver, true);
-        }
-
-        public CheckOutCompletePage ClickFinishButton()
-        {
-            _checkOutStepTwoPage.FinishButton.Click();
-            return new CheckOutCompletePage(Driver, true);
-        }
-
-        public IventoryPage ReturnHomePage()
-        {
-            _checkOutCompletePage.BackHomeButton.Click();
-            return new IventoryPage(Driver, true);
+            return (T)Activator.CreateInstance(typeof(T), Driver, false);
         }
     }
 }

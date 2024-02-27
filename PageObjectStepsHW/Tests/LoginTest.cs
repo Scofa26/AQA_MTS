@@ -1,48 +1,34 @@
-﻿using PageObjectStepsHW.Helpers.Configuration;
-using PageObjectStepsHW.Pages;
-using PageObjectStepsHW.Steps;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ChainOfInvocations.Helpers.Configuration;
+using ChainOfInvocations.Pages;
+using ChainOfInvocations.Tests;
 
-namespace PageObjectStepsHW.Tests
+namespace ChainOfInvocations.Tests
 {
     internal class LoginTest : BaseTest
     {
         [Test]
-        public void StandartUserSuccessfulLoginTest()
+        public void SuccessfulLoginTest()
         {
-            IventoryPage iventoryPage = NavigationSteps.SuccessfulLogin(Configurator.AppSettings.Username, Configurator.AppSettings.Password);
-            Assert.That(iventoryPage.IsPageOpened);
+            DashboardPage dashboardPage = _navigationSteps
+                .SuccessfulLogin(Configurator.AppSettings.Username, Configurator.AppSettings.Password);
+
+            Assert.That(dashboardPage.IsPageOpened);
         }
 
         [Test]
-        public void LockedOutUsernameLoginTest()
+        public void InvalidUsernameLoginTest()
         {
+            // Проверка
             Assert.That(
-                NavigationSteps
-                    .IncorrectLogin("locked_out_user", Configurator.AppSettings.Password)
-                    .ErrorText.Text.Trim(),
-                Is.EqualTo("Epic sadface: Sorry, this user has been locked out."));
-        }
-
-        [Test]
-        public void PerformanceGlitchUsernameLoginTest()
-        {
-            IventoryPage iventoryPage = NavigationSteps.SuccessfulLogin("performance_glitch_user", Configurator.AppSettings.Password);
-            Assert.That(iventoryPage.IsPageOpened);
-        }
-
-        [Test]
-        public void ProblemUsernameLoginTest()
-        {
-            Assert.That(
-                NavigationSteps
-                    .IncorrectLogin("problem_user", "")
-                    .ErrorText.Text.Trim(),
-                Is.EqualTo("Epic sadface: Password is required"));
+                _navigationSteps
+                    .IncorrectLogin("ssdd", "")
+                    .GetErrorLabelText(),
+                Is.EqualTo("Email/Login or Password is incorrect. Please try again."));
         }
     }
 }

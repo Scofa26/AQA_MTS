@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PageObjectSimple.Helpers.Configuration
+namespace LoadableComponent.Helpers.Configuration
 {
     public class AppSettings
     {

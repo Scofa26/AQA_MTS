@@ -1,14 +1,14 @@
-﻿using PageObjectSimple.Pages;
-using PageObjectSimple.Helpers.Configuration;
-
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PageObjectSimple.Tests;
+using LoadableComponent.Helpers.Configuration;
+using LoadableComponent.Pages;
+using LoadableComponent.Tests;
 
-namespace PageObjectSimple.Tests
+namespace LoadableComponent.Tests
 {
     internal class ProductsTest : BaseTest
     {

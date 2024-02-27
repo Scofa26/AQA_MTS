@@ -1,12 +1,13 @@
 ﻿using OpenQA.Selenium;
-using PageObjectStepsHW.Helpers.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ChainOfInvocations.Core;
+using ChainOfInvocations.Helpers.Configuration;
 
-namespace PageObjectStepsHW.Core
+namespace ChainOfInvocations.Core
 {
     internal class Browser
     {

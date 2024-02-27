@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 using SeleniumExtras.WaitHelpers;
 
-namespace PageObjectSimple.Helpers
+namespace LoadableComponent.Helpers
 {
     public class WaitHelpers(IWebDriver driver, TimeSpan timeout)
     {
