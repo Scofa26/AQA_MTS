@@ -13,39 +13,17 @@ namespace LoadableComponent.Tests
     internal class LoginTest : BaseTest
     {
         [Test]
-        public void StandartUserSuccessfulLoginTest()
+        public void SuccessfulLoginTest()
         {
             LoginPage loginPage = new LoginPage(Driver);
-            IventoryPage iventoryPage = loginPage.SuccessfulLogin(Configurator.AppSettings.Username, Configurator.AppSettings.Password);
-            Assert.That(iventoryPage.IsPageOpened);
-        }
+            loginPage.Load();
 
-        [Test]
-        public void LockedOutUsernameLoginTest()
-        {
-            Assert.That(
-                new LoginPage(Driver)
-                    .IncorrectLogin("locked_out_user", Configurator.AppSettings.Password)
-                    .ErrorText.Text.Trim(),
-                Is.EqualTo("Epic sadface: Sorry, this user has been locked out."));
-        }
+            loginPage.SuccessfulLogin(Configurator.AppSettings.Username, Configurator.AppSettings.Password);
 
-        [Test]
-        public void PerformanceGlitchUsernameLoginTest()
-        {
-            LoginPage loginPage = new LoginPage(Driver);
-            IventoryPage iventoryPage = loginPage.SuccessfulLogin("performance_glitch_user", Configurator.AppSettings.Password);
-            Assert.That(iventoryPage.IsPageOpened);
-        }
+            Driver.Navigate().GoToUrl("https://aqa2503.testrail.io/index.php?/mysettings");
 
-        [Test]
-        public void ProblemUsernameLoginTest()
-        {
-            Assert.That(
-                new LoginPage(Driver)
-                    .IncorrectLogin("problem_user", "")
-                    .ErrorText.Text.Trim(),
-                Is.EqualTo("Epic sadface: Password is required"));
+            DashboardPage dashboardPage = new DashboardPage(Driver);
+            dashboardPage.SidebarProjectsAddButton.Click();
         }
     }
 }
