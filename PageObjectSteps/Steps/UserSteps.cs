@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Allure.Pages;
+using NUnit.Allure.Attributes;
 using OpenQA.Selenium;
 
 namespace Allure.Steps
@@ -18,6 +19,7 @@ namespace Allure.Steps
         }
 
         // Комплексные
+        [AllureStep]
         public DashboardPage SuccessfulLogin(string username, string password)
         {
             _loginPage.EmailInput.SendKeys(username);
