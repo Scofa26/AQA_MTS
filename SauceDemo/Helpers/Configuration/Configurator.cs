@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PajeObjectSimple.Helpers.Configuration
+namespace PageObjectSimple.Helpers.Configuration
 {
     public class Configurator
     {
@@ -52,7 +52,7 @@ namespace PajeObjectSimple.Helpers.Configuration
         }
 
         public static string? BrowserType => Configuration[nameof(BrowserType)];
-        public static double WaitsTimeout => Double.Parse(Configuration[nameof(WaitsTimeout)]);
+        public static double WaitsTimeout => double.Parse(Configuration[nameof(WaitsTimeout)]);
 
     }
 }

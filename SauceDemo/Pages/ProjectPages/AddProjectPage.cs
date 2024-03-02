@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PajeObjectSimple.Pages.ProjectPages
+namespace PageObjectSimple.Pages.ProjectPages
 {
     internal class AddProjectPage : ProjectBasePage
     {
@@ -18,7 +18,7 @@ namespace PajeObjectSimple.Pages.ProjectPages
 
         protected override string GetEndpoint()
         {
-            return END_POINT;   
+            return END_POINT;
         }
 
         public override bool IsPageOpened()

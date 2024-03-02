@@ -1,22 +1,22 @@
 ﻿using OpenQA.Selenium;
-using PajeObjectSimple.Helpers;
-using PajeObjectSimple.Helpers.Configuration;
+using PageObjectSimple.Helpers;
+using PageObjectSimple.Helpers.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PajeObjectSimple.Pages
+namespace PageObjectSimple.Pages
 {
-    internal abstract class BasePage 
+    internal abstract class BasePage
     {
         public BasePage(IWebDriver driver, bool openPageByUrl = false)
         {
             Driver = driver;
             WaitHelpers = new WaitHelpers(Driver, TimeSpan.FromSeconds(Configurator.WaitsTimeout));
 
-            if(openPageByUrl)
+            if (openPageByUrl)
             {
                 OpenPageByURL();
             }

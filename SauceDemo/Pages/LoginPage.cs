@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PajeObjectSimple.Pages
+namespace PageObjectSimple.Pages
 {
     internal class LoginPage : BasePage
     {

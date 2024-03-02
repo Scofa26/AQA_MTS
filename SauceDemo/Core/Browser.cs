@@ -1,7 +1,8 @@
 ﻿using OpenQA.Selenium;
-using PajeObjectSimple.Helpers.Configuration;
-using PajeObjectSimple.Core;
-namespace PajeObjectSimple.Core
+using PageObjectSimple.Core;
+using PageObjectSimple.Helpers.Configuration;
+
+namespace PageObjectSimple.Core
 {
     internal class Browser
     {
@@ -18,7 +19,7 @@ namespace PajeObjectSimple.Core
 
             Driver?.Manage().Window.Maximize();
             Driver?.Manage().Cookies.DeleteAllCookies();
-           // Driver!.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(0);
+            // Driver!.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(0);
         }
     }
 }

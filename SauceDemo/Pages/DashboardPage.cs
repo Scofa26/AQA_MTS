@@ -1,18 +1,17 @@
 ﻿using OpenQA.Selenium;
-using PageObjectSimple.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PajeObjectSimple.Pages
+namespace PageObjectSimple.Pages
 {
     internal class DashboardPage : BasePage
     {
         private static readonly By TitleLabelBy = By.ClassName("page_title");
         private static string END_POINT = "index.php?/dashboard";
-        
+
         public MenuPage MenuPage;
 
         public DashboardPage(IWebDriver driver) : base(driver)
@@ -20,7 +19,7 @@ namespace PajeObjectSimple.Pages
             MenuPage = new MenuPage(driver);
         }
 
-      
+
         protected override string GetEndpoint()
         {
             return END_POINT;

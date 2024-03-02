@@ -1,14 +1,14 @@
-﻿using PajeObjectSimple.Helpers.Configuration;
-using PajeObjectSimple.Pages;
+﻿using PageObjectSimple.Helpers.Configuration;
+using PageObjectSimple.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PajeObjectSimple.Tests 
+namespace PageObjectSimple.Tests
 {
-    internal class LoginTest : SauceDemo.Tests.BaseTest
+    internal class LoginTest : BaseTest
     {
         [Test]
         public void SuccessfulLoginTest()
@@ -28,7 +28,7 @@ namespace PajeObjectSimple.Tests
             // Проверка
             Assert.That(
                 new LoginPage(Driver)
-                    .IncorrectLogin("ssdd", "")
+                    .IncorrectLogin("ssdd", "as21231")
                     .ErrorLabel.Text.Trim(),
                 Is.EqualTo("Email/Login or Password is incorrect. Please try again."));
         }

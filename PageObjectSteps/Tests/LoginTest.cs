@@ -31,7 +31,7 @@ namespace PageObjectSteps.Tests
                 new UserSteps(Driver)
                     .IncorrectLogin("ssdd", "")
                     .GetErrorLabelText(),
-                Is.EqualTo("Email/Login or Password is incorrect. Please try again."));
+                Is.EqualTo("Password is required."));
         }
     }
 }

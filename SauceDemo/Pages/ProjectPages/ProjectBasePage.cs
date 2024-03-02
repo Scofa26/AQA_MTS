@@ -1,11 +1,12 @@
 ﻿using OpenQA.Selenium;
+using PageObjectSimple.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PajeObjectSimple.Pages.ProjectPages
+namespace PageObjectSimple.Pages.ProjectPages
 {
     internal abstract class ProjectBasePage : BasePage
     {
@@ -19,6 +20,6 @@ namespace PajeObjectSimple.Pages.ProjectPages
         {
         }
 
-      
+
     }
 }
