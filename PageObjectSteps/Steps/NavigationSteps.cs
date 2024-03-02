@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PageObjectSteps.Steps
+namespace Allure.Steps
 {
     internal class NavigationSteps : BaseSteps
     {

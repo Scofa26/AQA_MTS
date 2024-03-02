@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
-using PageObjectSteps.Pages;
 
-namespace PageObjectSteps.Pages
+namespace Allure.Pages
 {
     internal class ProductPage : BasePage
     {

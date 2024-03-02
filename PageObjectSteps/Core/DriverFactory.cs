@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using WebDriverManager.DriverConfigs.Impl;
 using WebDriverManager;
 
-namespace PageObjectSteps.Core
+namespace Allure.Core
 {
     internal class DriverFactory
     {

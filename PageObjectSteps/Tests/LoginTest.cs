@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PageObjectSteps.Helpers.Configuration;
-using PageObjectSteps.Pages;
-using PageObjectSteps.Tests;
-using PageObjectSteps.Steps;
+using Allure.Pages;
+using Allure.Steps;
+using Allure.Helpers.Configuration;
 
-namespace PageObjectSteps.Tests
+namespace Allure.Tests
 {
     internal class LoginTest : BaseTest
     {

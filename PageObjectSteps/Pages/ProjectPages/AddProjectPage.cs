@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Allure.Pages;
 using OpenQA.Selenium;
-using PageObjectSteps.Pages;
 
-namespace PageObjectSteps.Pages.ProjectPages 
+namespace Allure.Pages.ProjectPages
 {
     internal class AddProjectPage : BasePage
     {

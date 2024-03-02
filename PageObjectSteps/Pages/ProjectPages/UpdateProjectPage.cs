@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
-using PageObjectSteps.Helpers;
-using PageObjectSteps.Pages.ProjectPages;
+using Allure.Helpers;
 
-namespace PageObjectSteps.Pages.ProjectPages
+namespace Allure.Pages.ProjectPages
 {
     internal class UpdateProjectPage : ProjectBasePage
     {

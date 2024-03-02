@@ -5,15 +5,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PageObjectSteps.Helpers;
-using PageObjectSteps.Helpers.Configuration;
-using PageObjectSteps.Core;
-using PageObjectSteps.Steps;
+using Allure.Core;
+using Allure.Helpers;
+using Allure.Steps;
+using Allure.Helpers.Configuration;
 
-namespace PageObjectSteps.Tests
+namespace Allure.Tests
 {
     //[Parallelizable(scope: ParallelScope.All)]
-   // [FixtureLifeCycle(LifeCycle.InstancePerTestCase)]
+    // [FixtureLifeCycle(LifeCycle.InstancePerTestCase)]
     internal class BaseTest
     {
         protected IWebDriver Driver { get; private set; }

@@ -4,10 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PageObjectSteps.Pages;
-using PageObjectSteps.Pages;
 
-namespace PageObjectSteps.Pages
+namespace Allure.Pages
 {
     internal class LoginPage : BasePage
     {
@@ -32,7 +30,7 @@ namespace PageObjectSteps.Pages
         public IWebElement RememberMeCheckbox => WaitHelpers.WaitForExists(RememberMeCheckboxBy);
         public IWebElement LoginInButton => WaitHelpers.WaitForExists(LoginInButtonBy);
 
-        
+
 
         protected override string GetEndpoint()
         {

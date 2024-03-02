@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 using SeleniumExtras.WaitHelpers;
 
-namespace PageObjectSteps.Helpers
+namespace Allure.Helpers
 {
     public class WaitHelpers(IWebDriver driver, TimeSpan timeout)
     {
@@ -17,7 +17,7 @@ namespace PageObjectSteps.Helpers
         public IWebElement WaitForVisibilityLocatedBy(By locator)
         {
             return _wait.Until(ExpectedConditions.ElementIsVisible(locator));
-                
+
         }
 
         public ReadOnlyCollection<IWebElement> WaitForAllVisibleElementsLocatedBy(By locator)

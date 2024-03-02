@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
-using PageObjectSteps.Pages.ProjectPages;
-using PageObjectSteps.Pages;
-using PageObjectSteps.Steps;
+using Allure.Steps;
+using Allure.Pages;
+using Allure.Pages.ProjectPages;
 
-namespace PageObjectSteps.Steps
+namespace Allure.Steps
 {
     internal class ProjectsSteps : BaseSteps
     {

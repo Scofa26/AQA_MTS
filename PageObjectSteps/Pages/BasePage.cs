@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PageObjectSteps.Helpers.Configuration;
-using PageObjectSteps.Helpers;
+using Allure.Helpers;
+using Allure.Helpers.Configuration;
 
-namespace PageObjectSteps.Pages
+namespace Allure.Pages
 {
-    internal abstract class BasePage 
+    internal abstract class BasePage
     {
         public BasePage(IWebDriver driver, bool openPageByUrl = false)
         {

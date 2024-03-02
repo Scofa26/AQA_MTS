@@ -6,9 +6,8 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using PageObjectSteps.Helpers.Configuration;
 
-namespace PageObjectSteps.Helpers.Configuration
+namespace Allure.Helpers.Configuration
 {
     public class Configurator
     {
@@ -53,7 +52,7 @@ namespace PageObjectSteps.Helpers.Configuration
         }
 
         public static string? BrowserType => Configuration[nameof(BrowserType)];
-        public static double WaitsTimeout => Double.Parse(Configuration[nameof(WaitsTimeout)]);
+        public static double WaitsTimeout => double.Parse(Configuration[nameof(WaitsTimeout)]);
 
     }
 }

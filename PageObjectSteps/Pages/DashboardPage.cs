@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
-using PageObjectSteps.Helpers;
-using PageObjectSteps.Pages;
+using Allure.Helpers;
 
-namespace PageObjectSteps.Pages
+namespace Allure.Pages
 {
     internal class DashboardPage : BasePage
     {

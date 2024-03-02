@@ -1,8 +1,8 @@
-﻿using OpenQA.Selenium;
-using PageObjectSteps.Core;
-using PageObjectSteps.Helpers.Configuration;
+﻿using Allure.Helpers.Configuration;
+using OpenQA.Selenium;
+using Allure.Core;
 
-namespace PageObjectSteps.Core
+namespace Allure.Core
 {
     internal class Browser
     {
@@ -19,7 +19,7 @@ namespace PageObjectSteps.Core
 
             Driver?.Manage().Window.Maximize();
             Driver?.Manage().Cookies.DeleteAllCookies();
-           // Driver!.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(0);
+            // Driver!.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(0);
         }
     }
 }

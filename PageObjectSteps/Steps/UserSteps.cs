@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Allure.Pages;
 using OpenQA.Selenium;
-using PageObjectSteps.Pages;
-using PageObjectSteps.Steps;
 
-namespace PageObjectSteps.Steps
+namespace Allure.Steps
 {
     internal class UserSteps : BaseSteps
     {
