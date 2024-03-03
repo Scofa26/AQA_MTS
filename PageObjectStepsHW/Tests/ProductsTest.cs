@@ -1,4 +1,6 @@
-﻿using PageObjectStepsHW.Helpers.Configuration;
+﻿using Allure.Net.Commons;
+using NUnit.Allure.Attributes;
+using PageObjectStepsHW.Helpers.Configuration;
 using PageObjectStepsHW.Pages;
 using System;
 using System.Collections.Generic;
@@ -8,9 +10,12 @@ using System.Threading.Tasks;
 
 namespace PageObjectStepsHW.Tests
 {
+    [Category("Product tests")]
     internal class ProductsTest : BaseTest
     {
-        [Test]
+        [Test(Description = "Test add product to cart")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [AllureOwner("Scofa")]
         public void AddProductToCart()
         {
             IventoryPage iventoryPage = NavigationSteps.SuccessfulLogin(Configurator.AppSettings.Username, Configurator.AppSettings.Password);
@@ -34,7 +39,9 @@ namespace PageObjectStepsHW.Tests
             });
         }
 
-        [Test]
+        [Test(Description = "Test remove product from cart")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [AllureOwner("Scofa")]
         public void RemoveProductToCart()
         {
             IventoryPage iventoryPage = NavigationSteps.SuccessfulLogin(Configurator.AppSettings.Username, Configurator.AppSettings.Password);
@@ -59,7 +66,9 @@ namespace PageObjectStepsHW.Tests
             });
         }
 
-        [Test]
+        [Test(Description = "Test check payment")]
+        [AllureSeverity(SeverityLevel.critical)]
+        [AllureOwner("Scofa")]
         public void CheckPayment()
         {
             IventoryPage iventoryPage = NavigationSteps.SuccessfulLogin(Configurator.AppSettings.Username, Configurator.AppSettings.Password);

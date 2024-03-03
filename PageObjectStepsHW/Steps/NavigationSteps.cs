@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using NUnit.Allure.Attributes;
+using OpenQA.Selenium;
 using PageObjectStepsHW.Pages;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ namespace PageObjectStepsHW.Steps
            
         }
 
+        [AllureStep("Open IventoryPage after successful log in ")]
         public IventoryPage SuccessfulLogin(string name, string pass)
         {
             _loginPage.UserNameInput.SendKeys(name);
@@ -23,6 +25,7 @@ namespace PageObjectStepsHW.Steps
             return new IventoryPage(Driver, true);
         }
 
+        [AllureStep("Check error for incorrect login")]
         public LoginPage IncorrectLogin(string name, string pass)
         {
             _loginPage.UserNameInput.SendKeys(name);
@@ -31,18 +34,21 @@ namespace PageObjectStepsHW.Steps
             return _loginPage;
         }
 
+        [AllureStep("Open ProductCartPage")]
         public ProductCartPage ClickShoppingCartLink()
         {
             _iventoryPage.ShoppingCartLink.Click();
             return new ProductCartPage(Driver, true);
         }
 
+        [AllureStep("Open CheckOutStepOnePage")]
         public CheckOutStepOnePage ClickCheckoutbutton()
         {
             _productCartPage.CheckoutButton.Click();
             return new CheckOutStepOnePage(Driver, true);
         }
 
+        [AllureStep]
         public CheckOutStepTwoPage CheckInfo(string firstName, string lastName, string postCode)
         {
             _checkOutStepOnePage.FirstNameInput.SendKeys(firstName);
@@ -52,12 +58,14 @@ namespace PageObjectStepsHW.Steps
             return new CheckOutStepTwoPage(Driver, true);
         }
 
+        [AllureStep("Open CheckOutCompletePage")]
         public CheckOutCompletePage ClickFinishButton()
         {
             _checkOutStepTwoPage.FinishButton.Click();
             return new CheckOutCompletePage(Driver, true);
         }
 
+        [AllureStep("Return to homepage")]
         public IventoryPage ReturnHomePage()
         {
             _checkOutCompletePage.BackHomeButton.Click();
