@@ -19,7 +19,7 @@ namespace PageObjectStepsHW.Tests
     {
         protected IWebDriver Driver { get; private set; }
         protected NavigationSteps NavigationSteps { get; private set; }
-
+        protected UserSteps UserSteps;
         [OneTimeSetUp]
         public static void GlobalSetUo()
         {
@@ -31,6 +31,7 @@ namespace PageObjectStepsHW.Tests
         {
             Driver = new Browser().Driver;
             NavigationSteps = new NavigationSteps(Driver);
+            UserSteps = new UserSteps(Driver);
 
             Driver.Navigate().GoToUrl(Configurator.AppSettings.URL);
         }
