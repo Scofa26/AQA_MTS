@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -11,16 +11,21 @@
 
   <ItemGroup>
     <None Remove="appsettings.json" />
+    <None Remove="NLog.config" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Allure.NUnit" Version="2.11.0" />
+    <PackageReference Include="Bogus" Version="35.5.0" />
     <PackageReference Include="Extensions.Configuration" Version="0.0.4" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="8.0.0" />
@@ -41,7 +46,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="bin\Debug\net8.0\allure-results\" />
+    <Folder Include="Clients\" />
+    <Folder Include="Models\" />
+    <Folder Include="Fakers\" />
+    <Folder Include="Services\" />
+    <Folder Include="Tests\" />
   </ItemGroup>
 
 </Project>
