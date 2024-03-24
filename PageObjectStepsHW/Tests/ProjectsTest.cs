@@ -12,19 +12,30 @@ using System.Threading.Tasks;
 namespace PageObjectStepsHW.Tests
 {
     internal class ProjectsTest : BaseTest
-
     {
         [Test]
-        public void AddProjectCorrectTest()
+        public void ProjectRadioButtonTest()
         {
             UserSteps
                 .SuccessfulLogin(Configurator.AppSettings.Username, Configurator.AppSettings.Password)
                 .AddProjectButton.Click();
 
             AddProjectPage addProjectPage = new AddProjectPage(Driver);
-            addProjectPage.ProjectTypeRadioButton.SelectByIndex(1);
-            addProjectPage.ProjectTypeRadioButton.SelectByValue("3");
-            addProjectPage.ProjectTypeRadioButton.SelectByText("Use a single repository for all cases (recommended)");
+            addProjectPage.ProjectTypeRadioButton.SelectByValue("2");
+            Assert.That(addProjectPage.ProjectTypeRadioButton.IsSelected("2"));
+        }
+
+        [Test]
+        public void ProjectCheckBoxTest()
+        {
+            UserSteps
+                .SuccessfulLogin(Configurator.AppSettings.Username, Configurator.AppSettings.Password)
+                .AddProjectButton.Click();
+
+            AddProjectPage addProjectPage = new AddProjectPage(Driver);
+            addProjectPage.ProjectCheckBox.SelectByValue("1");
+            Assert.That(addProjectPage.ProjectCheckBox.IsSelected("1"));
+
         }
 
         [Test]

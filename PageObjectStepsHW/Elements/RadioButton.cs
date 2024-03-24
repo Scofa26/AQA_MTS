@@ -60,6 +60,10 @@ namespace PageObjectStepsHW.Elements
             var index = _texts.IndexOf(text);
             _uiElements[index].Click();
         }
+        public bool IsSelected(string value)
+        {
+            return _uiElements[_values.IndexOf(value)].Selected;
+        }
         public List<string> GetOptions()
         {
             return _texts;

@@ -37,7 +37,7 @@ namespace PageObjectStepsHW.Elements
             _webElement = webElement;
         }
 
-        public string TagName => throw new NotImplementedException();
+        public string TagName => _webElement.TagName;
 
         public string Text
         {
@@ -158,7 +158,7 @@ namespace PageObjectStepsHW.Elements
         {
             _webElement.SendKeys(text);
         }
-
+       
         public void Submit()
         {
             _webElement.Submit();

@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using PageObjectStepsHW.Pages;
+using PageObjectStepsHW.Pages.TestCasePages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,11 +13,8 @@ namespace PageObjectStepsHW.Steps
     {
         protected IWebDriver Driver;
         public LoginPage _loginPage => new LoginPage(Driver);
-        public IventoryPage _iventoryPage => new IventoryPage(Driver, true);
-        public ProductCartPage _productCartPage => new ProductCartPage(Driver, true);
-        public CheckOutStepOnePage _checkOutStepOnePage => new CheckOutStepOnePage(Driver, true);
-        public CheckOutStepTwoPage _checkOutStepTwoPage => new CheckOutStepTwoPage(Driver, true);
-        public CheckOutCompletePage _checkOutCompletePage => new CheckOutCompletePage(Driver, true);
+        public TestCaseBasePage _testCaseBasePage => new TestCaseBasePage(Driver);
+        public AddTestCasePage _addTestcasePage => new AddTestCasePage(Driver);
         public BaseSteps(IWebDriver driver)
         {
             Driver = driver;

@@ -1,6 +1,7 @@
 ﻿using NUnit.Allure.Attributes;
 using OpenQA.Selenium;
 using PageObjectStepsHW.Pages;
+using PageObjectStepsHW.Pages.TestCasePages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,6 +37,13 @@ namespace PageObjectStepsHW.Steps
             _loginPage.LoginInButton.Click();
 
             return _loginPage;
+        }
+
+        public AddTestCasePage AddTestCase()
+        {
+            _testCaseBasePage.AddTestCaseButton.Click();
+            _addTestcasePage.TestCaseDropDwnOpen.Click();
+            return new AddTestCasePage(Driver);
         }
     }
 }

@@ -32,6 +32,6 @@ namespace PageObjectStepsHW.Pages.ProjectPages
         }
 
         // Атомарные Методы
-        public IWebElement SaveButton => WaitsHelper.WaitForExists(SaveButtonBy);
+        public IWebElement SaveButton => WaitHelpers.WaitForExists(SaveButtonBy);
     }
 }

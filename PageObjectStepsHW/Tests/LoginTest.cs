@@ -15,61 +15,38 @@ namespace PageObjectStepsHW.Tests
     [Category("Authorization tests")]
     internal class LoginTest : BaseTest
     {
-        [Test(Description = "Login test with statndart user and pass")]
-        [AllureSeverity(SeverityLevel.critical)]
-        [AllureOwner("Scofa")]
-        public void StandartUserSuccessfulLoginTest()
+        [Test]
+        public void SuccessfulLoginTest()
         {
-            IventoryPage iventoryPage = NavigationSteps.SuccessfulLogin(Configurator.AppSettings.Username, Configurator.AppSettings.Password);
-            AllureApi.AddTestParameter(Configurator.AppSettings.Username, Configurator.AppSettings.Password, ParameterMode.Masked);
-            Assert.That(iventoryPage.IsPageOpened);
+            LoginPage _loginPage = new LoginPage(Driver);
+            _loginPage.EmailInput.SendKeys(Configurator.AppSettings.Username);
+            _loginPage.PswInput.SendKeys(Configurator.AppSettings.Password);
+            _loginPage.ClickLoginInButton();
+
+            DashboardPage dashboardPage = new DashboardPage(Driver);
+
+            Assert.That(dashboardPage.IsPageOpened);
         }
 
-        [Test(Description = "Login test with lockedout user")]
-        [AllureSeverity(SeverityLevel.blocker)]
-        [AllureOwner("Scofa")]
-        public void LockedOutUsernameLoginTest()
+        [Test]
+        public void SuccessfulLoginTest1()
         {
-            AllureApi.AddAttachment("Error.txt", "text/plain", Encoding.UTF8.GetBytes("Epic sadface: Sorry, this user has been locked out."));
+            UserSteps userSteps = new UserSteps(Driver);
+            DashboardPage dashboardPage = userSteps
+                .SuccessfulLogin(Configurator.AppSettings.Username, Configurator.AppSettings.Password);
 
+            Assert.That(dashboardPage.IsPageOpened);
+        }
+
+        //[Test]
+        public void InvalidUsernameLoginTest()
+        {
+            // Проверка
             Assert.That(
-                NavigationSteps
-                    .IncorrectLogin("locked_out_user", Configurator.AppSettings.Password)
-                    .ErrorText.Text.Trim(),
-                Is.EqualTo("Epic sadface: Sorry, this user has been locked out."));
-        }
-
-        [Test(Description = "Login test with performance glitch user and pass")]
-        [AllureSeverity(SeverityLevel.minor)]
-        [AllureOwner("Scofa")]
-        public void PerformanceGlitchUsernameLoginTest()
-        {
-            IventoryPage iventoryPage = NavigationSteps.SuccessfulLogin("performance_glitch_user", Configurator.AppSettings.Password);
-            Assert.That(iventoryPage.IsPageOpened);
-        }
-
-        [Test(Description = "Login test with problem user")]
-        [AllureSeverity(SeverityLevel.critical)]
-        [AllureOwner("Scofa")]
-        public void ProblemUsernameLoginTest()
-        {
-            Assert.That(
-                NavigationSteps
-                    .IncorrectLogin("problem_user", "")
-                    .ErrorText.Text.Trim(),
-                Is.EqualTo("Epic sadface: Password is required"));
-        }
-
-        [Test(Description = "Failed Login test for test screenshot")]
-        [AllureSeverity(SeverityLevel.critical)]
-        [AllureOwner("Scofa")]
-        public void FailedLoginTest()
-        {
-            Assert.That(
-                NavigationSteps
-                    .IncorrectLogin("problem_user", "")
-                    .ErrorText.Text.Trim(),
-                Is.EqualTo("???"));
+                new UserSteps(Driver)
+                    .IncorrectLogin("ssdd", "")
+                    .GetErrorLabelText(),
+                Is.EqualTo("Email/Login or Password is incorrect. Please try again."));
         }
     }
 }
