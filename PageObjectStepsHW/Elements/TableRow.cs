@@ -23,11 +23,6 @@ namespace PageObjectStepsHW.Elements
             }
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="columnName"></param>
-        /// <returns></returns>
         public TableCell GetCell(int columnIndex)
         {
             return _cells[columnIndex];

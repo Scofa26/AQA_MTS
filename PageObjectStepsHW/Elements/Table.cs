@@ -15,12 +15,6 @@ namespace PageObjectStepsHW.Elements
         private List<string> _columns;
         private List<TableRow> _rows;
 
-
-        /// <summary>
-        /// Локатор данного элемента должен использовать тэг table
-        /// </summary>
-        /// <param name="webDriver"></param>
-        /// <param name="by"></param>
         public Table(IWebDriver webDriver, By by)
         {
             _uiElement = new UIElement(webDriver, by);
@@ -37,14 +31,7 @@ namespace PageObjectStepsHW.Elements
                 _rows.Add(new TableRow(rowElement));
             }
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="targetColumn"></param>
-        /// <param name="uniqueValue"></param>
-        /// <param name="columnName"></param>
-        /// <returns></returns>
+     
         public TableCell GetCell(string targetColumn, string uniqueValue, string columnName)
         {
             return GetCell(targetColumn, uniqueValue, _columns.IndexOf(columnName));

@@ -26,17 +26,13 @@ namespace PageObjectStepsHW.Elements
             {
                 UIElement uIElement = new UIElement(webDriver, webElement);
                 _uiElements.Add(uIElement);
-                _values.Add(uIElement.GetAttribute("id"));
+                //_values.Add(uIElement.GetAttribute("id"));
                 // _texts.Add(uIElement.FindUIElement(By.XPath("child::*")).Text.Trim());
                 _texts.Add(uIElement.Text.Trim());
             }
 
         }
         
-        public void SelectByValue(string value)
-        {
-            _uiElements[_values.IndexOf(value)].Click();
-        }
         public void SelectByText(string text)
         {
             var index = _texts.IndexOf(text);
