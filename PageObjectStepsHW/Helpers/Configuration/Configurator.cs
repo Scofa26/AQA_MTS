@@ -43,8 +43,6 @@ namespace PageObjectStepsHW.Helpers.Configuration
                 var child = Configuration.GetSection("AppSettings");
 
                 appSettings.URL = child["URL"];
-                appSettings.Username = child["Username"];
-                appSettings.Password = child["Password"];
 
                 return appSettings;
             }

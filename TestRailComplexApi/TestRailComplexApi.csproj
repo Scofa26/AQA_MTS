@@ -46,11 +46,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Clients\" />
-    <Folder Include="Models\" />
     <Folder Include="Fakers\" />
-    <Folder Include="Services\" />
-    <Folder Include="Tests\" />
   </ItemGroup>
 
 </Project>
